@@ -1,40 +1,99 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
-// import { i } from "react-icons/hi"; // Add hamburger icon
 import CartBox from "./CartBox";
 
 const BottomNav = () => {
   const [isOpen, setIsOpen] = useState(false); // State to toggle mobile menu
+  const [isCategoriesOpen, setIsCategoriesOpen] = useState(false); // State to toggle dropdown
+
+  const menuDrawerRef = useRef(null); // Reference for mobile menu drawer
+  const categoriesDropdownRef = useRef(null); // Reference for categories dropdown
 
   const menuItems = [
     { name: "Home", path: "/" },
-    { name: "Shop", path: "/shop" },
-    { name: "Electronics", path: "/electronics" },
-    { name: "Blogs", path: "/blogs" },
+    { name: "Clothes", path: "/clothes" },
+    { name: "Food", path: "/food" },
+    { name: "About Us", path: "/aboutus" },
     { name: "Contact", path: "/contact" },
-    { name: "Seller Page", path: "/seller" },
   ];
 
-  return (
-    <div className="bg-white shadow-lg py-2">
-      <div className="mx-auto flex justify-between items-center px-4">
-        {/* Left Section - Shop by Categories */}
-        {/* <div className="flex items-center">
-          <button className="flex items-center space-x-2 bg-gradient-to-r from-red-500 to-orange-400 text-white py-2 px-4 rounded-lg hover:shadow-md">
-            <i className="text-xl" />
-            <span>SHOP BY CATEGORIES</span>
-          </button>
-        </div> */}
+  // Close drawer or dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      // Check if click is outside the mobile drawer
+      if (
+        menuDrawerRef.current &&
+        !menuDrawerRef.current.contains(event.target)
+      ) {
+        setIsOpen(false);
+      }
 
+      // Check if click is outside the categories dropdown
+      if (
+        categoriesDropdownRef.current &&
+        !categoriesDropdownRef.current.contains(event.target)
+      ) {
+        setIsCategoriesOpen(false);
+      }
+    };
+
+    // Add event listener to detect clicks outside
+    document.addEventListener("mousedown", handleClickOutside);
+
+    // Cleanup the event listener
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
+  return (
+    <div className="bg-white shadow-lg py-2 relative">
+      <div className="mx-auto flex justify-between items-center px-4">
+        {/* Left Section - Hamburger Menu */}
         <div className="lg:hidden">
-          <button onClick={() => setIsOpen(!isOpen)} className="text-gray-800">
-            <i className="material-icons text-4xl">menu</i>
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="flex items-center justify-center w-12 h-12 border border-gray-400 rounded-md text-gray-800"
+          >
+            <i className="material-icons text-3xl">menu</i>
           </button>
         </div>
 
-        {/* Middle Section - Menu Items */}
-        <div className="hidden lg:flex space-x-8 justify-center w-full
-         items-center">
+        {/* Shop by Categories */}
+        <div className="flex items-center relative" ref={categoriesDropdownRef}>
+          <button
+            onClick={() => setIsCategoriesOpen(!isCategoriesOpen)}
+            className="flex items-center space-x-2 bg-gradient-to-r from-red-500 to-orange-400 text-white py-2 px-4 rounded-lg hover:shadow-md"
+          >
+            <i className="text-xl" />
+            <span>SHOP BY CATEGORIES</span>
+          </button>
+
+          {isCategoriesOpen && (
+            <div className="absolute top-full mt-2 bg-white shadow-md rounded-md py-2 w-48">
+              <Link
+                to="/food"
+                className="block px-4 py-2 text-gray-800 hover:bg-gray-200"
+                onClick={() => setIsCategoriesOpen(false)} // Close dropdown on click
+              >
+                Food
+              </Link>
+              <Link
+                to="/clothes"
+                className="block px-4 py-2 text-gray-800 hover:bg-gray-200"
+                onClick={() => setIsCategoriesOpen(false)} // Close dropdown on click
+              >
+                Clothes
+              </Link>
+            </div>
+          )}
+        </div>
+
+        {/* Middle Section - Desktop Menu */}
+        <div
+          className="hidden lg:flex space-x-8 justify-center w-full
+         items-center"
+        >
           {menuItems.map((item) => (
             <Link
               key={item.name}
@@ -52,19 +111,31 @@ const BottomNav = () => {
         </div>
       </div>
 
+      {/* Mobile Menu Drawer */}
       {isOpen && (
-        <div className="lg:hidden bg-white shadow-md absolute w-full left-0 top-14 z-10">
-          <div className="flex flex-col space-y-2 p-4">
-            {menuItems.map((item) => (
-              <Link
-                key={item.name}
-                to={item.path}
-                className="text-gray-800 hover:text-red-500"
-                onClick={() => setIsOpen(false)} // Close the menu on click
-              >
-                {item.name}
-              </Link>
-            ))}
+        <div className="lg:hidden fixed inset-0 bg-gray-900 bg-opacity-50 z-20">
+          <div
+            ref={menuDrawerRef}
+            className="absolute left-0 top-0 w-64 h-full bg-white shadow-lg p-4 z-30 flex flex-col"
+          >
+            <button
+              onClick={() => setIsOpen(false)}
+              className="text-gray-800 mb-4 self-end"
+            >
+              Close
+            </button>
+            <div className="flex flex-col space-y-2">
+              {menuItems.map((item) => (
+                <Link
+                  key={item.name}
+                  to={item.path}
+                  className="text-gray-800 hover:text-red-500"
+                  onClick={() => setIsOpen(false)} // Close drawer on click
+                >
+                  {item.name}
+                </Link>
+              ))}
+            </div>
           </div>
         </div>
       )}
