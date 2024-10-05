@@ -44,7 +44,7 @@ const BottomNav = () => {
           <CartBox />
         </div>
 
-        {/* Mobile Menu Toggle Button */}
+
         <div className="lg:hidden">
           <button onClick={() => setIsOpen(!isOpen)} className="text-gray-800">
             <i className="material-icons text-4xl">menu</i>
@@ -52,7 +52,7 @@ const BottomNav = () => {
         </div>
       </div>
 
-      {/* Mobile Menu */}
+
       {isOpen && (
         <div className="lg:hidden bg-white shadow-md absolute w-full left-0 top-14 z-10">
           <div className="flex flex-col space-y-2 p-4">
