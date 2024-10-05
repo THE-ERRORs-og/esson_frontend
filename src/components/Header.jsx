@@ -7,7 +7,7 @@ const Header = () => {
   return (
     <nav className="bg-white  py-4">
       <TopNav />
-      <BottomNav />
+      {/* <BottomNav /> */}
     </nav>
   );
 };

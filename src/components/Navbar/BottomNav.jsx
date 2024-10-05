@@ -17,17 +17,24 @@ const BottomNav = () => {
 
   return (
     <div className="bg-white shadow-lg py-2">
-      <div className="container mx-auto flex justify-between items-center px-4">
+      <div className="mx-auto flex justify-between items-center px-4">
         {/* Left Section - Shop by Categories */}
-        <div className="flex items-center">
+        {/* <div className="flex items-center">
           <button className="flex items-center space-x-2 bg-gradient-to-r from-red-500 to-orange-400 text-white py-2 px-4 rounded-lg hover:shadow-md">
             <i className="text-xl" />
             <span>SHOP BY CATEGORIES</span>
           </button>
+        </div> */}
+
+        <div className="lg:hidden">
+          <button onClick={() => setIsOpen(!isOpen)} className="text-gray-800">
+            <i className="material-icons text-4xl">menu</i>
+          </button>
         </div>
 
         {/* Middle Section - Menu Items */}
-        <div className="hidden lg:flex space-x-8 items-center">
+        <div className="hidden lg:flex space-x-8 justify-center w-full
+         items-center">
           {menuItems.map((item) => (
             <Link
               key={item.name}
@@ -43,15 +50,7 @@ const BottomNav = () => {
         <div className="hidden sm:flex lg:hidden">
           <CartBox />
         </div>
-
-
-        <div className="lg:hidden">
-          <button onClick={() => setIsOpen(!isOpen)} className="text-gray-800">
-            <i className="material-icons text-4xl">menu</i>
-          </button>
-        </div>
       </div>
-
 
       {isOpen && (
         <div className="lg:hidden bg-white shadow-md absolute w-full left-0 top-14 z-10">
