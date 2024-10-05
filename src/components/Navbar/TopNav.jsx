@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import logoImg from "/src/assets/logo/logo.png"
 import CartBox from "./CartBox";
 
 const TopNav = () => {
@@ -9,11 +10,11 @@ const TopNav = () => {
         {/* Logo Section */}
         <div className="flex items-center h-full bg-red-50">
           <img
-            src="logo.jpg" // Replace with actual path or logo import
+            src={logoImg} // Replace with actual path or logo import
             alt="E-Mart Logo"
-            className="w-12 h-12 mr-3"
+            className=" h-12 mr-3"
           />
-          <span className="text-2xl font-bold text-gray-800">e-mart</span>
+          {/* <span className="text-2xl font-bold text-gray-800">e-mart</span> */}
         </div>
 
         {/* second part */}
@@ -48,11 +49,11 @@ export default TopNav;
 
 const SearchBar = () => {
   return (
-    <div className="flex items-center h-full w-full justify-center">
+    <div className="flex items-center h-full w-full justify-center max-w-full overflow-hidden">
       <input
         type="text"
         placeholder="Search"
-        className="border border-gray-300 h-full px-4 py-2 flex-1 min-h-5 rounded-l-md focus:outline-none"
+        className="border border-gray-300 h-full px-4 py-2 w-full md:flex-1 min-h-5 rounded-l-md focus:outline-none"
       />
       <select className="hidden md:flex border border-gray-300 h-full px-4 py-2 bg-white focus:outline-none">
         <option value="all">All Categories</option>
