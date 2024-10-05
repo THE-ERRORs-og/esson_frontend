@@ -5,30 +5,28 @@ const Newsletter = () => {
   return (
     <section
       id="newsletter"
-      className="flex justify-between flex-wrap items-center bg-cover bg-no-repeat p-8 bg-gray-400"
-      
+      className="flex justify-center items-center gap-6 flex-col bg-[#f5f5f5] p-8"
     >
       {/* Newsletter Text */}
-      <div className="newstext">
-        <h4 className="text-white font-bold text-lg">Sign Up For Newsletter</h4>
-        <p className="text-white font-bold text-sm">
-          Get email updates about our latest products and{" "}
-          <span className="text-pink-200">Special offers</span>
+      <div className="flex flex-col text-center gap-1  md:w-1/2 mb-4 md:mb-0">
+        <h4 className="text-[#0b0335] font-bold text-lg">
+          SIGN UP FOR OUR NEWSLETTER
+        </h4>
+        <p className="text-[#0b0335] text-sm">
+          Receive our latest updates about our products & promotions.
         </p>
       </div>
 
       {/* Newsletter Form */}
-      <div className="form flex justify-center w-full md:w-2/5 mt-4 md:mt-0">
+      <div className="flex justify-center w-full md:w-1/2 mt-4 md:mt-0">
         <input
           type="email"
-          placeholder="Type Your Email ID"
-          className="h-12 px-4 w-full border-2 border-blue-700 rounded-md text-sm outline-none"
+          placeholder="enter your email address"
+          className="h-12 px-4 w-full border-2 border-gray-300 rounded-md text-sm outline-none"
         />
-        <button className="ml-2 font-bold w-1/4 md:w-1/4  text-xs md:py-3 px-4 rounded-3xl bg-teal-600 text-white  hover:bg-teal-800 transition ease-in-out">
-          Sign Up
+        <button className="ml-2 font-bold h-12 px-6 bg-[#0b0335] text-white rounded-md hover:bg-gray-800 transition ease-in-out">
+          Submit
         </button>
-       
-        {/* <Button className= "bg-gradient-to-r from-red-500 to-orange-500 font-bold w-1/2 md:w-1/2 text-white text-xs md:py-3 px-4 rounded-3xl hover:bg-pink-600">Sign Up</Button> */}
       </div>
     </section>
   );
