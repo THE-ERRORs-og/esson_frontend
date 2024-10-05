@@ -2,6 +2,8 @@ import React from 'react';
 import Hero from './Hero';
 import Catalouge from './Catalouge';
 import Categories from './Categories';
+import FeaturedCategories from './FeaturedCategories';
+import Newsletter from './Newsletter';
 
 const Landing = () => {
   return (
@@ -10,8 +12,12 @@ const Landing = () => {
             {/* <h1 className="text-4xl font-bold text-center mt-10">Landing Page</h1> */}
             <Hero/>
             <Catalouge/>
-            <Categories/>
+            <Categories category="Food"/>
+            <Categories category="Clothes"/>
+            <FeaturedCategories/>
+          
         </section>
+        <Newsletter/>
     </main>
   );
 }

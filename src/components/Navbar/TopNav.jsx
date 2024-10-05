@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import logoImg from "/src/assets/logo/logo.png"
+import {logo} from "../../assets/images"
 import CartBox from "./CartBox";
 
 const TopNav = () => {
@@ -10,7 +10,7 @@ const TopNav = () => {
         {/* Logo Section */}
         <div className="flex items-center h-full bg-red-50">
           <img
-            src={logoImg} // Replace with actual path or logo import
+            src={logo} // Replace with actual path or logo import
             alt="E-Mart Logo"
             className=" h-12 mr-3"
           />
