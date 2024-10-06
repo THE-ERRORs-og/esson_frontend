@@ -4,6 +4,8 @@ import Catalouge from './Catalouge';
 import Categories from './Categories';
 import FeaturedCategories from './FeaturedCategories';
 import Newsletter from './Newsletter';
+import Services from './Services';
+import PromoBanner from '@/components/Promo/PromoBanner';
 
 const Landing = () => {
   return (
@@ -12,8 +14,10 @@ const Landing = () => {
             {/* <h1 className="text-4xl font-bold text-center mt-10">Landing Page</h1> */}
             <Hero/>
             <Catalouge/>
+            <Services />
             <Categories category="Food"/>
             <Categories category="Clothes"/>
+            <PromoBanner/>
             <FeaturedCategories/>
           
         </section>
