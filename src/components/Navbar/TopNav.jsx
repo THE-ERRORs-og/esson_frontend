@@ -23,7 +23,7 @@ const TopNav = () => {
           <div className="hidden xl:flex h-full items-center space-x-4 ">
             <i className="material-icons text-4xl text-gray-800">headset_mic</i>
             <div className="flex items-start h-full flex-col text-nowrap justify-center ">
-              <span className="text-gray-600">Call us Free</span>
+              <span className="text-gray-600">Call Us Free</span>
               <a href="tel:+084800456789" className="text-gray-800 font-bold">
                 (+084) 800 456 789
               </a>
