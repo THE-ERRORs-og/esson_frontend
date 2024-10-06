@@ -8,7 +8,7 @@ const TopNav = () => {
     <div className="flex items-center justify-center h-40 sm:h-20 py-3 shadow-md">
       <div className="flex flex-col sm:flex-row justify-between items-center px-5 text-nowrap gap-y-6 gap-x-36 md:gap-x-16  h-full w-full lg:w-[960px] xl:w-[1200px] ">
         {/* Logo Section */}
-        <div className="flex items-center h-full bg-red-50">
+        <div className="flex items-center h-full">
           <img
             src={logo} // Replace with actual path or logo import
             alt="E-Mart Logo"

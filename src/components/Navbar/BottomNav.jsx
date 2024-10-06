@@ -63,9 +63,8 @@ const BottomNav = () => {
         <div className="flex items-center relative" ref={categoriesDropdownRef}>
           <button
             onClick={() => setIsCategoriesOpen(!isCategoriesOpen)}
-            className="flex items-center space-x-2 bg-gradient-to-r from-red-500 to-orange-400 text-white py-2 px-4 rounded-lg hover:shadow-md"
+            className="flex items-center space-x-2 bg-gradient-to-r from-red-500 to-orange-400 text-white py-2 px-4 rounded-lg hover:shadow-md text-nowrap"
           >
-            <i className="text-xl" />
             <span>SHOP BY CATEGORIES</span>
           </button>
 
@@ -122,7 +121,7 @@ const BottomNav = () => {
               onClick={() => setIsOpen(false)}
               className="text-gray-800 mb-4 self-end"
             >
-              Close
+              <i className="material-icons text-gray-800">close</i>
             </button>
             <div className="flex flex-col space-y-2">
               {menuItems.map((item) => (
@@ -130,7 +129,7 @@ const BottomNav = () => {
                   key={item.name}
                   to={item.path}
                   className="text-gray-800 hover:text-red-500"
-                  onClick={() => setIsOpen(false)} // Close drawer on click
+                  onClick={() => setIsOpen(false)} 
                 >
                   {item.name}
                 </Link>

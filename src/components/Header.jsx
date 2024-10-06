@@ -5,7 +5,7 @@ import BottomNav from "./Navbar/BottomNav";
 const Header = () => {
 
   return (
-    <nav className="bg-white  py-4">
+    <nav className="bg-white relative pt-4 z-30">
       <TopNav />
       <BottomNav />
     </nav>

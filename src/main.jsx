@@ -5,6 +5,7 @@ import "./index.css";
 import Landing from "./pages/Landing/Landing";
 import App from "./App";
 import NotFound from "./pages/notFound/NotFound";
+import ContactComponent from "./pages/ContactUs/Contact";
 
 const router = createBrowserRouter([
   {
@@ -14,6 +15,10 @@ const router = createBrowserRouter([
       {
         path: "",
         element: <Landing />,
+      },
+      {
+        path: "contact",
+        element: <ContactComponent />,
       },
       {
         path: "*",
