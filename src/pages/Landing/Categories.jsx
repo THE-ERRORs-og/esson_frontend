@@ -11,17 +11,20 @@ import {
 
 import watch from "../../assets/watch.jpg";
 import ProductCard from "@/components/Product Cards/ProductCard";
+import Slider from "@/components/Product Cards/Slider";
+
 const Categories = ({category}) => {
   return (
     <div>
       <h1 className="uppercase font-bold text-2xl text-justify py-4">{category}</h1>
       <hr />
       <div className="flex justify-center gap-16 p-2">
-        <img
+        {/* <img
           src="/src/assets/electronics.webp"
           alt=""
           className="hidden md:flex md:w-1/3 m-5"
-        />
+        /> */}
+        <Slider  />
         <CarouselSize />
       </div>
     </div>
