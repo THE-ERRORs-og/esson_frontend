@@ -4,6 +4,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
+import { electronics, headphone,watch } from '@/assets/images';
 
 const Slider = () => {
   return (
@@ -26,7 +27,7 @@ const Slider = () => {
         <SwiperSlide>
           <div className="w-full h-full bg-cover bg-center flex justify-center items-center bg-[url('/path/to/your/image1.jpg')]">
             <img
-          src="/src/assets/electronics.webp"
+          src={electronics}
           alt=""
           className=""
         />
@@ -36,7 +37,7 @@ const Slider = () => {
         <SwiperSlide>
           <div className="w-full h-full bg-cover bg-center flex justify-center items-center bg-[url('/path/to/your/image2.jpg')]">
           <img
-          src="/src/assets/headphone.jpg"
+          src={headphone}
           alt=""
           className=""
         />
@@ -46,7 +47,7 @@ const Slider = () => {
         <SwiperSlide>
           <div className="w-full h-full bg-cover bg-center flex justify-center items-center bg-[url('/path/to/your/image3.jpg')]">
           <img
-          src="/src/assets/watch.jpg"
+          src={watch}
           alt=""
           className=""
         />
