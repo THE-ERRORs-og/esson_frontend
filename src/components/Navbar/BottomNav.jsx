@@ -48,7 +48,7 @@ const BottomNav = () => {
 
   return (
     <div className="bg-white shadow-lg py-2 relative">
-      <div className="mx-auto flex justify-between items-center px-4">
+      <div className="mx-auto flex justify-between items-center px-4 w-full lg:w-[960px] xl:w-[1200px]">
         {/* Left Section - Hamburger Menu */}
         <div className="lg:hidden">
           <button
