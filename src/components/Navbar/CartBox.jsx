@@ -6,7 +6,7 @@ const CartBox = () => {
     <div className="flex  lg:flex items-center space-x-6">
       {/* Shopping Cart and Wishlist */}
       <div className="flex items-center space-x-4">
-        <div className="relative hidden md:flex">
+        <div className="relative hidden ">
           <Link to="/wishlist" className="text-gray-800">
             <i className="material-icons material-symbols-outlined text-4xl text-gray-600">
               favorite
