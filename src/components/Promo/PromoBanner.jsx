@@ -2,7 +2,7 @@ import React from 'react';
 
 const PromoBanner = () => {
   return (
-    <div className="bg-[#ffefad] p-6 rounded-lg flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
+    <div className="bg-[#ffefad] mt-4 p-6 rounded-lg flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
       <div className="flex items-center space-x-4">
         {/* Left Side: Logo and Text */}
         <div className="flex items-center space-x-2">
