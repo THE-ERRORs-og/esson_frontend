@@ -139,23 +139,23 @@ const BottomNav = () => {
           className="fixed right-4 top-3 block p-2 text-2xl text-slate-800 lg:hidden"
           onClick={toggleMenu}
         >
-          <FaChevronRight className="text-4xl text-[#f14d43]"/>
+          <FaChevronRight className="text-xl text-[#f14d43]"/>
         </button>
 
         <img
           src={logo} // Replace with actual path or logo import
           alt="E-Mart Logo"
-          className="h-16 p-1 "
+          className="h-12 p-1 "
         />
         {menuItems.map((item) => (
           <div className="flex space-x-10 pt-2 items-center" key={item.name}>
-            <div className="text-3xl text-[#f14d43]" onClick={toggleMenu}>
+            <div className="text-xl text-[#f14d43]" onClick={toggleMenu}>
               {item.icon}
             </div>
             <Link
               to={item.path}
               onClick={toggleMenu}
-              className="text-gray-800 text-2xl font-semibold hover:text-red-500 transition duration-300"
+              className="text-gray-800 text-xl font-semibold hover:text-red-500 transition duration-300"
             >
               {item.name}
             </Link>
