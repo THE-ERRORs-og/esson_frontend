@@ -59,6 +59,7 @@ const CarouselSize = () => {
                 productName="Apple Watch"
                 price="$599"
               />
+              
             </CarouselItem>
           ))}
         </CarouselContent>

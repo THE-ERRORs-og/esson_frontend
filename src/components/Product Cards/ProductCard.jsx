@@ -3,7 +3,7 @@ import { Button } from "../ui/button";
 
 const ProductCard = ({ productImg, productDesc, productName, price }) => {
   return (
-    <div className="w-full max-w-sm  bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+    <div className="w-full bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
       <a href="#">
         <img
           className="p-2 rounded-t-lg"

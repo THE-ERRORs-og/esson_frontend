@@ -1,6 +1,17 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import CartBox from "./CartBox";
+import { MdMenu, MdClose } from "react-icons/md";
+import { FaChevronRight } from "react-icons/fa";
+import { logo } from "../../assets/images";
+
+import {
+  AiOutlineHome,
+  AiOutlineInfoCircle,
+  AiOutlinePhone,
+} from "react-icons/ai";
+import { GiClothes } from "react-icons/gi";
+import { MdOutlineFastfood } from "react-icons/md";
 
 const BottomNav = () => {
   const [isOpen, setIsOpen] = useState(false); // State to toggle mobile menu
@@ -8,27 +19,35 @@ const BottomNav = () => {
 
   const menuDrawerRef = useRef(null); // Reference for mobile menu drawer
   const categoriesDropdownRef = useRef(null); // Reference for categories dropdown
+  const overlayRef = useRef(null); // Reference for the dimmed background
 
   const menuItems = [
-    { name: "Home", path: "/" },
-    { name: "Clothes", path: "/clothes" },
-    { name: "Food", path: "/food" },
-    { name: "About Us", path: "/aboutus" },
-    { name: "Contact", path: "/contact" },
+    { name: "Home", path: "/", icon: <AiOutlineHome /> },
+    { name: "Clothes", path: "/clothes", icon: <GiClothes /> },
+    { name: "Food", path: "/food", icon: <MdOutlineFastfood  /> },
+    { name: "About Us", path: "/aboutus", icon: <AiOutlineInfoCircle /> },
+    { name: "Contact", path: "/contact", icon: <AiOutlinePhone /> },
   ];
 
-  // Close drawer or dropdown when clicking outside
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
+  // Close mobile drawer or dropdown when clicking outside
   useEffect(() => {
     const handleClickOutside = (event) => {
-      // Check if click is outside the mobile drawer
+      // Check if the click is outside the mobile drawer
       if (
         menuDrawerRef.current &&
-        !menuDrawerRef.current.contains(event.target)
+        !menuDrawerRef.current.contains(event.target) &&
+        isOpen &&
+        overlayRef.current &&
+        !overlayRef.current.contains(event.target)
       ) {
         setIsOpen(false);
       }
 
-      // Check if click is outside the categories dropdown
+      // Check if the click is outside the categories dropdown
       if (
         categoriesDropdownRef.current &&
         !categoriesDropdownRef.current.contains(event.target)
@@ -44,18 +63,18 @@ const BottomNav = () => {
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, []);
+  }, [isOpen]);
 
   return (
     <div className="bg-white shadow-lg py-2 relative">
       <div className="mx-auto flex justify-between items-center px-4 w-full lg:w-[960px] xl:w-[1200px]">
         {/* Left Section - Hamburger Menu */}
-        <div className="lg:hidden">
+        <div className="sm:hidden">
           <button
-            onClick={() => setIsOpen(!isOpen)}
             className="flex items-center justify-center w-12 h-12 border border-gray-400 rounded-md text-gray-800"
+            onClick={toggleMenu}
           >
-            <i className="material-icons text-3xl">menu</i>
+            <MdMenu size={24} />
           </button>
         </div>
 
@@ -89,15 +108,12 @@ const BottomNav = () => {
         </div>
 
         {/* Middle Section - Desktop Menu */}
-        <div
-          className="hidden lg:flex space-x-8 justify-center w-full
-         items-center"
-        >
+        <div className="hidden sm:flex space-x-8 justify-center w-full items-center">
           {menuItems.map((item) => (
             <Link
               key={item.name}
               to={item.path}
-              className="text-gray-800 hover:text-red-500 transition duration-300"
+              className="text-gray-800 uppercase text-xs md:text-sm font-semibold hover:text-red-500 transition duration-300"
             >
               {item.name}
             </Link>
@@ -111,32 +127,49 @@ const BottomNav = () => {
       </div>
 
       {/* Mobile Menu Drawer */}
-      {isOpen && (
-        <div className="lg:hidden fixed inset-0 bg-gray-900 bg-opacity-50 z-20">
-          <div
-            ref={menuDrawerRef}
-            className="absolute left-0 top-0 w-64 h-full bg-white shadow-lg p-4 z-30 flex flex-col"
-          >
-            <button
-              onClick={() => setIsOpen(false)}
-              className="text-gray-800 mb-4 self-end"
-            >
-              <i className="material-icons text-gray-800">close</i>
-            </button>
-            <div className="flex flex-col space-y-2">
-              {menuItems.map((item) => (
-                <Link
-                  key={item.name}
-                  to={item.path}
-                  className="text-gray-800 hover:text-red-500"
-                  onClick={() => setIsOpen(false)} 
-                >
-                  {item.name}
-                </Link>
-              ))}
+      <div
+        className={`fixed top-0 left-0 h-full w-2/3 z-50 flex flex-col items-start pl-8 gap-4 bg-slate-50 pr-4 pt-14 transition-transform duration-300 ease-out transform ${
+          isOpen ? "translate-x-0" : "-translate-x-full"
+        } md:hidden`}
+        ref={menuDrawerRef}
+      >
+        <button
+          aria-label="Close menu"
+          aria-expanded={isOpen}
+          className="fixed right-4 top-3 block p-2 text-2xl text-slate-800 lg:hidden"
+          onClick={toggleMenu}
+        >
+          <FaChevronRight className="text-4xl text-[#f14d43]"/>
+        </button>
+
+        <img
+          src={logo} // Replace with actual path or logo import
+          alt="E-Mart Logo"
+          className="h-16 p-1 "
+        />
+        {menuItems.map((item) => (
+          <div className="flex space-x-10 pt-2 items-center" key={item.name}>
+            <div className="text-3xl text-[#f14d43]" onClick={toggleMenu}>
+              {item.icon}
             </div>
+            <Link
+              to={item.path}
+              onClick={toggleMenu}
+              className="text-gray-800 text-2xl font-semibold hover:text-red-500 transition duration-300"
+            >
+              {item.name}
+            </Link>
           </div>
-        </div>
+        ))}
+      </div>
+
+      {/* Dimmed Background Overlay */}
+      {isOpen && (
+        <div
+          ref={overlayRef}
+          className="fixed inset-0 bg-gray-900 bg-opacity-50 z-40 transition duration-300"
+          onClick={toggleMenu} // Close menu when clicking on overlay
+        ></div>
       )}
     </div>
   );
