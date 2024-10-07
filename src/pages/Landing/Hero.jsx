@@ -56,10 +56,10 @@ const Hero = () => {
               </p>
               <h1 className="underline text-sm cursor-pointer">Shop Now!</h1>
             </div>
-            <div className="flex justify-center space-x-2 pb-4">
+            {/* <div className="flex justify-center space-x-2 pb-4">
               <div className="w-3 h-3 bg-pink-500 rounded-full"></div>
               <div className="w-3 h-3 bg-pink-200 rounded-full"></div>
-            </div>
+            </div> */}
           </div>
         </div>
 
@@ -76,10 +76,10 @@ const Hero = () => {
               </p>
               <h1 className="underline text-sm cursor-pointer">Shop Now!</h1>
             </div>
-            <div className="flex justify-center space-x-2 pb-4">
+            {/* <div className="flex justify-center space-x-2 pb-4">
               <div className="w-3 h-3 bg-pink-500 rounded-full"></div>
               <div className="w-3 h-3 bg-pink-200 rounded-full"></div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

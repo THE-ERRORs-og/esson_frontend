@@ -2,7 +2,7 @@ import cloth from './cloth.jpg';
 import electronics from './electronics.webp';
 import headphone from './headphone.jpg';
 import watch from './watch.jpg';
-import logo from './logo/logo.png'
+import logo from './logo/esson1.png'
 
 import f1 from "./services/f1.png";
 import f2 from "./services/f2.png";

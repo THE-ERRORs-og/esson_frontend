@@ -35,7 +35,7 @@ export default Categories;
 
 const CarouselSize = () => {
   return (
-    <div className="w-full md:w-[59%] flex items-center">
+    <div className="w-full md:w-[59%] flex items-center pb-6">
       <Carousel
         opts={{
           align: "start",
@@ -59,6 +59,7 @@ const CarouselSize = () => {
                 productName="Apple Watch"
                 price="$599"
               />
+
             </CarouselItem>
           ))}
         </CarouselContent>
