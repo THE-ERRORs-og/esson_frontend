@@ -7,6 +7,12 @@
   }
 
 }
+@font-face {
+  font-family: 'Bogle';
+  src: url('./assets/fonts/BOGLEREGULAR.OTF') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
 
 .material-icons {
   font-family: 'Material Icons';
