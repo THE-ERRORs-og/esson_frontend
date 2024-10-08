@@ -9,7 +9,8 @@ import {
   CarouselPrevious,
 } from "../../components/ui/carousel";
 
-import watch from "../../assets/watch.jpg";
+
+import { watch } from "../../assets/images";
 import ProductCard from "@/components/Product Cards/ProductCard";
 import Slider from "@/components/Product Cards/Slider";
 
