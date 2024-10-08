@@ -1,9 +1,7 @@
 import FeaturedCards from '@/components/Product Cards/FeaturedCards'
 import React from 'react'
-import cloth from "../../assets/cloth.jpg";
-import watch from "../../assets/watch.jpg";
-import headphone from "../../assets/headphone.jpg";
-import elec from "../../assets/electronics.webp";
+import { cloth, watch } from "../../assets/images";
+
 
 const FeaturedCategories = () => {
   return (

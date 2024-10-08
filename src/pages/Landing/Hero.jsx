@@ -1,15 +1,13 @@
 
-
-
-
 import { Button } from "../../components/ui/button";
 import React from "react";
+import { headphone,watch, b1 } from "../../assets/images";
 
 const Hero = () => {
   return (
     <div className="grid grid-cols-1 md:grid-cols-3 gap-6 p-4 md:p-8 bg-gray-100">
       {/* Main Promotion */}
-      <div className="col-span-1 md:col-span-2 rounded-lg shadow-lg relative bg-[url('/src/assets/headphone.jpg')] bg-cover bg-center">
+      <div className="col-span-1 md:col-span-2 rounded-lg shadow-lg relative  bg-cover bg-center" style={{ backgroundImage: `url(${headphone})` }}>
         <div className="flex flex-col space-y-12 md:space-y-64">
           <div className="w-3/4 md:w-1/2 flex flex-col justify-center space-y-4 p-6 mt-4 md:mt-10 ml-4 md:ml-14">
             <span className="bg-blue-500 w-24 text-white px-4 py-1 text-sm font-semibold rounded-full">
@@ -44,7 +42,7 @@ const Hero = () => {
       {/* Side Promotions */}
       <div className="flex justify-between space-x-2 md:flex-col md:space-x-0 md:space-y-6 relative ">
         {/* Microsoft Headphone */}
-        <div className="rounded-lg w-full shadow-lg relative bg-[url('/src/assets/watch.jpg')] bg-cover bg-center h-52 md:h-full">
+        <div className="rounded-lg w-full shadow-lg relative bg-cover bg-center h-52 md:h-full"  style={{ backgroundImage: `url(${b1})` }}>
           <div className="flex flex-col h-full justify-center">
             <div className="w-3/4 md:w-1/2 flex flex-col justify-center space-y-4 p-6 ml-4 md:ml-14">
               <h2 className="text-xl md:text-2xl font-thin text-black">
@@ -64,7 +62,7 @@ const Hero = () => {
         </div>
 
         {/* iPhone X Collection */}
-        <div className="rounded-lg w-full shadow-lg relative bg-[url('/src/assets/slider02.jpg')] bg-cover bg-center h-52 md:h-full">
+        <div className="rounded-lg w-full shadow-lg relative bg-cover bg-center h-52 md:h-full" style={{ backgroundImage: `url(${watch})` }}>
           <div className="flex flex-col h-full justify-center">
             <div className="w-3/4 md:w-1/2 flex flex-col justify-center space-y-4 p-6 ml-4 md:ml-14">
               <h2 className="text-xl md:text-2xl font-thin text-black">
