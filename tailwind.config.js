@@ -15,7 +15,10 @@ export default {
   			md: 'calc(var(--radius) - 2px)',
   			sm: 'calc(var(--radius) - 4px)'
   		},
-  		colors: {}
+  		colors: {},
+      fontFamily: {
+        custom: ['Bogle', 'sans-serif'], // Add other fallback fonts here
+      },
   	}
   },
   plugins: [require("tailwindcss-animate")],
