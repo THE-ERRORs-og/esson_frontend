@@ -6,6 +6,7 @@ import Landing from "./pages/Landing/Landing";
 import App from "./App";
 import NotFound from "./pages/notFound/NotFound";
 import ContactComponent from "./pages/ContactUs/Contact";
+import ProductPage from "./pages/ProductPage/ProductPage";
 
 const router = createBrowserRouter([
   {
@@ -19,6 +20,10 @@ const router = createBrowserRouter([
       {
         path: "contact",
         element: <ContactComponent />,
+      },
+      {
+        path: "product-page",
+        element: <ProductPage />,
       },
       {
         path: "*",

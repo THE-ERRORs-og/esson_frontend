@@ -7,7 +7,7 @@ import { GalleryProvider } from "./context/GalleryContext";
 
 function App() {
   return (
-    <div id="detail">
+    <div id="detail" className=" font-custom">
       <GalleryProvider>
         <ScrollToTop />
         <Header />
