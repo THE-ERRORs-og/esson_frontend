@@ -24,7 +24,7 @@ jobs:
       - name: Build
         run: npm run build # The build command of your project
         env:
-          API_KEY: ${{ secrets.VITE_SERVER_URL }}
+          VITE_SERVER_URL: ${{ secrets.VITE_SERVER_URL }}
 
       - name: Push
         uses: s0/git-publish-subdir-action@develop
