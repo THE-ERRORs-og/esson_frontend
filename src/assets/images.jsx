@@ -12,4 +12,4 @@ import f4 from "./services/f4.png";
 
 import aboutusP1 from "./aboutus/peoples.webp";
 
-export {cloth , electronics , headphone , watch ,aboutusP1, logo ,f1, f2,f3,f4};
+export {cloth , electronics , headphone , watch ,aboutusP1, logo ,b1 ,f1, f2,f3,f4};
