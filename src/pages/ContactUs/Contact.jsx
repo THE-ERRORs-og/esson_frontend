@@ -17,27 +17,27 @@ import { FaPhoneVolume } from 'react-icons/fa6';
 // import db from '../../constants/Firebase';
 
 const ContactComponent = () => {
-  const [otherClass, setOtherClass] = useState('');
-  const [otherStream, setOtherStream] = useState('');
+  const [otherItemType, setOtherItemType] = useState("");
+  const [otherCategory, setOtherCategory] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [formData, setFormData] = useState({
-    firstName: '',
-    phone: '',
-    city: '',
-    state: '',
-    class: '',
-    message: '',
-    email: '',
-    stream: '',
+    firstName: "",
+    phone: "",
+    city: "",
+    state: "",
+    itemType: "",
+    message: "",
+    email: "",
+    category: "",
   });
 
   const [errors, setErrors] = useState({
-    firstName: '',
-    phone: '',
-    class: '',
-    email: '',
-    message: '',
-    stream: '',
+    firstName: "",
+    phone: "",
+    itemType: "",
+    email: "",
+    message: "",
+    category: "",
   });
 
   const handleChange = (e) => {
@@ -54,43 +54,34 @@ const ContactComponent = () => {
     setErrors((prevErrors) => ({ ...prevErrors, [name]: '' }));
   };
 
-  // const sendDataToAPI = async (data) => {
-  //   const apiData = {
-  //     FirstName: data.name,
-  //     Email: data.email,
-  //     MobileNumber: data.phoneNumber,
-  //     AuthToken: 'essongroup-19-12-2023',
-  //     Source: 'essongroup',
-  //     Course: 32, // You can modify this based on your actual course value
-  //     LeadChannel: 8, // You can modify this based on your actual lead channel value
-  //     LeadSource: 36, // You can modify this based on your actual lead source value
-  //     leadCampaign: 2, // You can modify this based on your actual lead campaign value
-  //   };
+  const sendDataToAPI = async (formData) => {
+    const server_url = import.meta.env.VITE_SERVER_URL;
+    try {
+      const response = await fetch(
+        server_url + "/esson_mail/send-contact-form",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        }
+      );
 
-  //   console.log('apiData:', apiData);
-  //   try {
-  //     // const response = await fetch(
-  //     //   'https://thirdpartyapi.extraaedge.com/api/SaveRequest',
-  //     //   {
-  //     //     method: 'POST',
-  //     //     headers: {
-  //     //       'Content-Type': 'application/json',
-  //     //     },
-  //     //     body: JSON.stringify(apiData),
-  //     //   }
-  //     // );
+      if (response.ok) {
+        const result = await response.json();
+        console.log(result.message);
+        return true;
+      } else {
+        console.log("Failed to send contact form data.");
+        return false;
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      return false;
+    }
+  };
 
-  //     // if (!response.ok) {
-  //     //   throw new Error('Failed to send data to API');
-  //     // }
-
-  //     // const responseData = await response.text();
-  //     // console.log('API Response:', responseData);
-  //   } catch (error) {
-  //     console.error('Error sending data to API:', error);
-  //     throw error;
-  //   }
-  // };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -118,57 +109,49 @@ const ContactComponent = () => {
       }
 
       try {
-        // Get the current index value
-        // const indexDocRef = doc(db, 'index', 'SupportQueriesIndex');
-        // const indexDocSnap = await getDoc(indexDocRef);
-        // let currentIndex = 1; // Default value if index document doesn't exist
-
-        // if (indexDocSnap.exists()) {
-        //   currentIndex = indexDocSnap.data().val;
-        // }
+       
 
         // Prepare data to be added to the SupportQueries collection
-        // const data = {
-        //   name: formData.firstName.trim(),
-        //   phoneNumber: formData.phone,
-        //   city: formData.city,
-        //   state: formData.state,
-        //   query: formData.message,
-        //   class: formData.class === 'others' ? otherClass : formData.class,
-        //   email: formData.email,
-        //   stream: formData.stream === 'others' ? otherStream : formData.stream,
-        //   date: Date.now(),
-        //   index: currentIndex, // Set the index field
-        // };
+        const data = {
+          name: formData.firstName.trim(),
+          phoneNumber: formData.phone,
+          city: formData.city,
+          state: formData.state,
+          query: formData.message,
+          itemType:
+            formData.itemType === "others" ? otherItemType : formData.itemType,
+          email: formData.email,
+          category:
+            formData.category === "others" ? otherCategory : formData.category,
+          date: Date.now(),
+        };
 
-        // Add document to the SupportQueries collection
-        // const docRef = await addDoc(collection(db, 'SupportQueries'), data);
-
-        // Update the index for the next document
-        // await setDoc(indexDocRef, { val: increment(1) }, { merge: true });
-
+       
         // Send data to the external API
-        // await sendDataToAPI(data);
-
+        var resp= await sendDataToAPI(data);
+        
+        if(!resp){
+          return;
+        }
         // Reset form data and errors
         setFormData({
-          firstName: '',
-          phone: '',
-          city: '',
-          state: '',
-          class: '',
-          email: '',
-          message: '',
-          stream: '',
+          firstName: "",
+          phone: "",
+          city: "",
+          state: "",
+          itemType: "",
+          email: "",
+          message: "",
+          category: "",
         });
 
         setErrors({
-          firstName: '',
-          phone: '',
-          class: '',
-          email: '',
-          message: '',
-          stream: '',
+          firstName: "",
+          phone: "",
+          itemType: "",
+          email: "",
+          message: "",
+          category: "",
         });
 
         // Show success message
@@ -382,7 +365,7 @@ return (
           <button
             type="submit"
             disabled={isLoading}
-            className={`w-full bg-[#f14d43] text-white py-3 rounded-md font-medium hover:bg-blue-700 ${
+            className={`w-full bg-[#f14d43] text-white py-3 rounded-md font-medium hover:bg-[#fa8c3c] ${
               isLoading && "opacity-50 cursor-not-allowed"
             }`}
           >
