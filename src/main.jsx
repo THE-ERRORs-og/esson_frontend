@@ -7,6 +7,7 @@ import App from "./App";
 import NotFound from "./pages/notFound/NotFound";
 import ContactComponent from "./pages/ContactUs/Contact";
 import Food from "./pages/Food/Food";
+import AboutUs from "./pages/AboutUs/AboutUs";
 
 const router = createBrowserRouter([
   {
@@ -24,6 +25,10 @@ const router = createBrowserRouter([
       {
         path: "food",
         element: <Food />,
+      },
+      {
+        path: "aboutus",
+        element: <AboutUs />,
       },
       {
         path: "*",
