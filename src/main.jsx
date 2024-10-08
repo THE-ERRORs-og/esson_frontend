@@ -6,6 +6,7 @@ import Landing from "./pages/Landing/Landing";
 import App from "./App";
 import NotFound from "./pages/notFound/NotFound";
 import ContactComponent from "./pages/ContactUs/Contact";
+import Food from "./pages/Food/Food";
 import ProductPage from "./pages/ProductPage/ProductPage";
 
 const router = createBrowserRouter([
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
       {
         path: "contact",
         element: <ContactComponent />,
+      },
+      {
+        path: "food",
+        element: <Food />,
       },
       {
         path: "product-page",
