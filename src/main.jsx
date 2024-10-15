@@ -9,6 +9,7 @@ import ContactComponent from "./pages/ContactUs/Contact";
 import Food from "./pages/Food/Food";
 import AboutUs from "./pages/AboutUs/AboutUs";
 import ProductPage from "./pages/ProductPage/ProductPage";
+import SearchResults from "./pages/SearchResult.jsx/SearchResult";
 
 const router = createBrowserRouter([
   {
@@ -28,8 +29,12 @@ const router = createBrowserRouter([
         element: <Food />,
       },
       {
-        path: "product-page",
+        path: "product-page/:productId",
         element: <ProductPage />,
+      },
+      {
+        path: "/search/:category/:query",
+        element: <SearchResults/>,
       },
       {
         path: "aboutus",

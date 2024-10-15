@@ -21,44 +21,25 @@ import SizeDropdown from "./SizeDropDown";
 import Selector from "./Selectors";
 import QuantitySelector from "./Quantity";
 
-const CoroselSideBar = () => {
+const CoroselSideBar = ({product}) => {
   return (
     <div className="m-6">
-      <h1 className="font-bold text-3xl">Custom Gift Boxes with Logo</h1>
+      <h1 className="font-bold text-3xl">{product.name}</h1>
       <h3 className="font-bold text-xl my-4">from $0.870 / unit</h3>
       <div>
         <Button className="bg-red-400"> Esson* New Offer Unlocked</Button>
       </div>
       <p className="flex flex-wrap my-5">
-        Our recyclable custom gift boxes add an eco-chic touch to your packaging
-        that makes an impact on your customers, but not the planet.
+        {product.description}
       </p>
 
       <div className="my-4">
-        <Button className="bg-gray-300 text-black mx-1 my-2 rounded-full ">
+        {product.tags.map((tag,idx) => (
+          <Button key={idx} className="bg-gray-300 text-black mx-1 my-2 rounded-full ">
           {" "}
-          Recycle
+          {tag}
         </Button>
-        <Button className="bg-gray-300 text-black mx-1 my-2 rounded-full ">
-          {" "}
-          Compostable
-        </Button>
-        <Button className="bg-gray-300 text-black mx-1 my-2 rounded-full ">
-          {" "}
-          FSC-Certified
-        </Button>
-        <Button className="bg-gray-300 text-black mx-1 my-2 rounded-full ">
-          {" "}
-          Water-based Inks
-        </Button>
-        <Button className="bg-gray-300 text-black mx-1 my-2 rounded-full ">
-          {" "}
-          Samples
-        </Button>
-        <Button className="bg-gray-300 text-black mx-1 my-2 rounded-full ">
-          {" "}
-          QR
-        </Button>
+        ))}
       </div>
 
       <div className="mb-6">
