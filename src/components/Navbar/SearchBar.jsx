@@ -31,7 +31,7 @@ const SearchBar = () => {
   const handleSearch = () => {
     if (searchTerm.trim()) {
       setSearchTerm(""); // Clear search input
-      navigate(`/search/${category}/${searchTerm}`);
+      navigate(`/search?category=${category}&query=${searchTerm}`);
     }
   };
 

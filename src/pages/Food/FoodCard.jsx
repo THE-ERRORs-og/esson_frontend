@@ -2,7 +2,7 @@
 import { cn } from "@/lib/utils";
 import { headphone } from "../../assets/images";
 
-export function FoodCard({image, tagName ,quantityLimit, deliveryTime, productName, price,unit}) {
+export function FoodCard({image, tagName ,quantityLimit, deliveryTime, productName, price,unit ,productId='fc01'}) {
   return (
     <div className="max-w-xs w-full md:w-full group/card">
       <div
