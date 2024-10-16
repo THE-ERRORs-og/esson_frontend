@@ -7,6 +7,7 @@ import Newsletter from './Newsletter';
 import Services from './Services';
 import PromoBanner from '@/components/Promo/PromoBanner';
 
+
 const Landing = () => {
   return (
     <main className="mt-[65px]">
@@ -19,6 +20,7 @@ const Landing = () => {
             <Categories category="Clothes"/>
             <PromoBanner/>
             <FeaturedCategories/>
+           
           
         </section>
         <Newsletter/>
