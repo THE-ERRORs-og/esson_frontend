@@ -1,22 +1,13 @@
 import React, { useEffect, useState } from 'react';
 
-const SizeDropdown = ({sizeValues=[]}) => {
-  const [selectedSize, setSelectedSize] = useState('');
+const SizeDropdown = ({ sizeValues = [], selectedSize="", setSelectedSize =()=>{} }) => {
+  // const [selectedSize, setSelectedSize] = useState("");
   const [isDropdownOpen, setIsDropdownOpen] = useState(false); // Track dropdown open state
   const [sizeOptions, setSizeOptions] = useState([]);
   const handleSelect = (value) => {
     setSelectedSize(value);
     setIsDropdownOpen(false); // Close dropdown after selection
   };
-
-  // const sizeOptions = [
-  //   { value: '102x152x76mm', label: '102 x 152 x 76 mm (4" x 6" x 3")' },
-  //   { value: '102x102x51mm', label: '102mm x 102mm x 51mm (4" x 4" x 2")' },
-  //   { value: '127x203x76mm', label: '127 x 203 x 76 mm (5" x 8" x 3")' },
-  //   { value: '127x76x38mm', label: '127mm x 76mm x 38mm (5" x 3" x 1.5")' },
-  //   { value: '152x152x51mm', label: '152 x 152 x 51 mm (6" x 6" x 2")' },
-  //   { value: '152x229x76mm', label: '152 x 229 x 76 mm (6" x 9" x 3")' },
-  // ];
 
   useEffect(() => {
     if (sizeValues.length > 0) {
@@ -37,12 +28,25 @@ const SizeDropdown = ({sizeValues=[]}) => {
       >
         {selectedSize
           ? sizeOptions.find((option) => option.value === selectedSize)?.label
-          : 'Select a size'}
+          : "Select a size"}
 
         {/* Custom dropdown arrow */}
         <div className="absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none">
-          <svg className={`w-5 h-5 text-gray-500 transform ${isDropdownOpen ? 'rotate-180' : ''}`} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+          <svg
+            className={`w-5 h-5 text-gray-500 transform ${
+              isDropdownOpen ? "rotate-180" : ""
+            }`}
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M19 9l-7 7-7-7"
+            />
           </svg>
         </div>
       </div>
@@ -58,8 +62,19 @@ const SizeDropdown = ({sizeValues=[]}) => {
             >
               {option.label}
               {selectedSize === option.value && (
-                <svg className="w-5 h-5 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                <svg
+                  className="w-5 h-5 text-green-500"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M5 13l4 4L19 7"
+                  />
                 </svg>
               )}
             </li>

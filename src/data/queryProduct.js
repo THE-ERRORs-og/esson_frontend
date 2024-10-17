@@ -22,18 +22,15 @@ const queryProducts = (query) => {
 // This function queries unique values of a specific field from products
 const getUniqueValues = (field) => {
   const uniqueValues = new Set();
-
   products.forEach((product) => {
     if (Array.isArray(product[field])) {
-      // If the field is an array (e.g., tags, size), add each element individually
       product[field].forEach((item) => uniqueValues.add(item));
     } else {
-      // If the field is a string (e.g., category), add it directly
       uniqueValues.add(product[field]);
     }
   });
 
-  return Array.from(uniqueValues); // Convert Set back to an array for easier use
+  return Array.from(uniqueValues); 
 };
 
 export { queryProducts, getUniqueValues };
