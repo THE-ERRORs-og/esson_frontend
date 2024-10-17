@@ -9,6 +9,10 @@ import f1 from "./services/f1.png";
 import f2 from "./services/f2.png";
 import f3 from "./services/f3.png";
 import f4 from "./services/f4.png";
+import boss_cup_black from "./product/boss_cup_black.png";
+import boss_esson_cup from "./product/boss_esson_cup.png";
+import cup_lid_pack from "./product/cup_lid_pack.png";
+import cup_lid from "./product/cup_lid.png";
 
 import aboutusP1 from "./aboutus/peoples.webp";
 
