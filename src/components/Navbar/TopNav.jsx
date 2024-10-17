@@ -4,6 +4,7 @@ import {logo} from "../../assets/images"
 import CartBox from "./CartBox";
 import { TfiHeadphoneAlt } from "react-icons/tfi";
 
+
 const TopNav = () => {
   return (
     <div className="flex items-center justify-center h-40 sm:h-20 py-3 shadow-md">
@@ -34,6 +35,7 @@ const TopNav = () => {
 
           {/* Search Bar */}
           <SearchBar />
+        
 
           {/* Right Section */}
           <div className="flex sm:hidden lg:flex ">
