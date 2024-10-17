@@ -14,7 +14,7 @@ import {
 import { cn } from "@/lib/utils";
 import { AnimatePresence, motion } from "framer-motion";
 
-import { useOutsideClick } from "../../hooks/use-outside-click";
+// import { useOutsideClick } from "../../hooks/use-outside-click";
 import { noimage } from "@/assets/images";
 
 export const CarouselContext = createContext({
@@ -162,7 +162,7 @@ export const Card = ({
     return () => window.removeEventListener("keydown", onKeyDown);
   }, [open]);
 
-  useOutsideClick(containerRef, () => handleClose());
+  // useOutsideClick(containerRef, () => handleClose());
 
   const handleOpen = () => {
     setOpen(true);

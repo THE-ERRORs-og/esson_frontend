@@ -10,7 +10,7 @@ import {
 } from "../../components/ui/carousel";
 
 
-import { watch } from "../../assets/images";
+import { noimage} from "../../assets/images";
 import ProductCard from "@/components/Product Cards/ProductCard";
 import Slider from "@/components/Product Cards/Slider";
 
@@ -51,7 +51,7 @@ const CarouselSize = ({productData}) => {
               <ProductCard
                 product={product}
                 productImg={
-                  product.images.length > 0 ? product.images[0] : watch
+                  product.images.length > 0 ? product.images[0] : noimage
                 }
                 productDesc={truncateDescription(product.description, 60)} // Example: limit to 100 characters
                 productName={product.name}
