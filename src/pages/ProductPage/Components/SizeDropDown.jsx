@@ -9,14 +9,6 @@ const SizeDropdown = ({sizeValues=[]}) => {
     setIsDropdownOpen(false); // Close dropdown after selection
   };
 
-  // const sizeOptions = [
-  //   { value: '102x152x76mm', label: '102 x 152 x 76 mm (4" x 6" x 3")' },
-  //   { value: '102x102x51mm', label: '102mm x 102mm x 51mm (4" x 4" x 2")' },
-  //   { value: '127x203x76mm', label: '127 x 203 x 76 mm (5" x 8" x 3")' },
-  //   { value: '127x76x38mm', label: '127mm x 76mm x 38mm (5" x 3" x 1.5")' },
-  //   { value: '152x152x51mm', label: '152 x 152 x 51 mm (6" x 6" x 2")' },
-  //   { value: '152x229x76mm', label: '152 x 229 x 76 mm (6" x 9" x 3")' },
-  // ];
 
   useEffect(() => {
     if (sizeValues.length > 0) {
