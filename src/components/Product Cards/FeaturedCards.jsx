@@ -6,7 +6,7 @@ const FeaturedCards = ({image, name ,onClick}) => {
   return (
     <div className="flex flex-col items-center" onClick={()=> onClick(name)}>
       <Avatar>
-        <AvatarImage src={image} className="object-cover" />
+        <AvatarImage data-src={image} className="object-cover" />
         <AvatarFallback>Product</AvatarFallback>
       </Avatar>
       <h1 className="text-md font-semibold text-center py-2">{name}</h1>
