@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Corousel from "./Components/Corousel";
 import CoroselSideBar from "./Components/CoroselSideBar";
 import AboutProduct from "./Components/AboutProduct";
-import {queryProducts} from "@/data/queryProduct"; 
+import { queryProducts } from "@/data/queryProduct";
 
 const ProductPage = () => {
   const { productId } = useParams();
@@ -11,6 +11,21 @@ const ProductPage = () => {
   // Query the product using the queryProducts function
   const filteredProducts = queryProducts({ id: productId });
   const product = filteredProducts.length ? filteredProducts[0] : null;
+
+  // States for dynamic values
+  const [selectedSize, setSelectedSize] = useState(null);
+  const [selectedType, setSelectedType] = useState('Kraft');
+  const [selectedPrintOption, setSelectedPrintOption] = useState('Inside and Outside');
+  const [selectedQuantity, setSelectedQuantity] = useState(null);
+
+  useEffect(() => {
+    console.log("selectedSize", selectedSize);
+    console.log("selectedType", selectedType);
+    console.log("selectedPrintOption", selectedPrintOption);
+  }, [selectedSize, selectedType, selectedPrintOption]);
+
+
+  const selectedPrice = selectedQuantity !== null ? product?.price[selectedQuantity]?.price : 0;
 
   // If no product is found, show a custom "Product Not Found" div
   if (!product) {
@@ -21,8 +36,7 @@ const ProductPage = () => {
             Product Not Found
           </h1>
           <p className="text-gray-600 mb-6">
-            Oops! The product you are looking for does not exist or has been
-            removed.
+            Oops! The product you are looking for does not exist or has been removed.
           </p>
           <a
             href="/"
@@ -35,14 +49,28 @@ const ProductPage = () => {
     );
   }
 
+  // Handle adding product to cart
+  const handleAddToCart = () => {
+    const cartItem = {
+      productId: product.id,
+      name: product.name,
+      selectedSize,
+      selectedType,
+      selectedPrintOption,
+      selectedQuantity: product?.price[selectedQuantity]?.quantity || 0,
+      price: selectedPrice,
+    };
+
+    // Here, you would typically add the item to your cart state or context
+    console.log("Item added to cart:", cartItem);
+  };
+
   return (
     <div>
       <div className="flex">
         <div className="w-[100%]">
-          {/* Pass the product data to Corousel */}
           <Corousel className="w-[60%]" images={product.images} />
 
-          {/* Pass the product data to AboutProduct */}
           <AboutProduct
             name={product.name}
             description={product.description}
@@ -51,8 +79,20 @@ const ProductPage = () => {
             size={product.size}
           />
         </div>
-        {/* Pass the product data to CoroselSideBar if needed */}
-        <CoroselSideBar className="" product={product} />
+
+        <CoroselSideBar
+          product={product}
+          selectedSize={selectedSize}
+          setSelectedSize={setSelectedSize}
+          selectedType={selectedType}
+          setSelectedType={setSelectedType}
+          selectedPrintOption={selectedPrintOption}
+          setSelectedPrintOption={setSelectedPrintOption}
+          selectedQuantity={selectedQuantity}
+          setSelectedQuantity={setSelectedQuantity}
+          selectedPrice={selectedPrice}
+          handleAddToCart={handleAddToCart}
+        />
       </div>
     </div>
   );

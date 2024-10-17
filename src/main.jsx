@@ -9,7 +9,7 @@ import ContactComponent from "./pages/ContactUs/Contact";
 import Food from "./pages/Food/Food";
 import AboutUs from "./pages/AboutUs/AboutUs";
 import ProductPage from "./pages/ProductPage/ProductPage";
-import SearchResults from "./pages/SearchResult.jsx/SearchResult";
+import SearchResults from "./pages/SearchResult/SearchResult";
 
 const router = createBrowserRouter([
   {
