@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import Corousel from "./Components/Corousel";
 import CoroselSideBar from "./Components/CoroselSideBar";
 import AboutProduct from "./Components/AboutProduct";
-import {queryProducts} from "@/data/queryProduct"; 
+import { queryProducts } from "@/data/queryProduct";
 
 const ProductPage = () => {
   const { productId } = useParams();
@@ -37,12 +37,17 @@ const ProductPage = () => {
 
   return (
     <div>
-      <div className="flex">
-        <div className="w-[100%]">
+      <div className="flex flex-col lg:flex-row">
+        <div className="w-[100%] ">
           {/* Pass the product data to Corousel */}
-          <Corousel className="w-[60%]" images={product.images} />
+          <Corousel className="w-full lg:w-[60%] h-auto" images={product.images} />
 
-          {/* Pass the product data to AboutProduct */}
+          {/* On mobile/tablet, move sidebar below carousel */}
+          <div className="block lg:hidden">
+            <CoroselSideBar className="" product={product} />
+          </div>
+
+          {/* On mobile/tablet, push AboutProduct to the end */}
           <AboutProduct
             name={product.name}
             description={product.description}
@@ -51,8 +56,11 @@ const ProductPage = () => {
             size={product.size}
           />
         </div>
-        {/* Pass the product data to CoroselSideBar if needed */}
-        <CoroselSideBar className="" product={product} />
+
+        {/* Sidebar stays on the right for large screens */}
+        <div className="hidden lg:block">
+          <CoroselSideBar className="" product={product} />
+        </div>
       </div>
     </div>
   );
