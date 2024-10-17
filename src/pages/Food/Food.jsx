@@ -14,9 +14,9 @@ const Food = () => {
       </div>
       
       <FoodSlider />
-      <SlidingCarousel/>
+      <SlidingCarousel titleText="Trending Now"/>
       <FoodSlider />
-      <SlidingCarousel/>
+      <SlidingCarousel titleText="Shop Now"/>
       
     </div>
   );
