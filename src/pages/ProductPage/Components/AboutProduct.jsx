@@ -16,12 +16,12 @@ Nec enim absolvi beata vita sapientis neque ad exitum perduci poterit, si prima 
 </blockquote>
 
 
-<pre>Tum ille: Tu autem cum ipse tantum librorum habeas, quos hic
+<p>Tum ille: Tu autem cum ipse tantum librorum habeas, quos hic
 tandem requiris?
 
 Possumusne ergo in vita summum bonum dicere, cum id ne in
 cena quidem posse videamur?
-</pre>
+</p>
 
 
 <ul>
@@ -152,7 +152,7 @@ cena quidem posse videamur?
 const AboutProduct = () => {
   return (
     <div className='m-5'>
-      <h1 className='text-3xl font-bold'>Product Detail</h1>
+      <h1 className='text-3xl font-bold '>Product Detail</h1>
       <div dangerouslySetInnerHTML={{ __html: data }} />
     </div>
   )
