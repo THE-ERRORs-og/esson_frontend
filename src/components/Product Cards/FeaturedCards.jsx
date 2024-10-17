@@ -2,9 +2,9 @@ import React from "react";
 
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
-const FeaturedCards = ({image, name}) => {
+const FeaturedCards = ({image, name ,onClick}) => {
   return (
-    <div className="flex flex-col items-center">
+    <div className="flex flex-col items-center" onClick={()=> onClick(name)}>
       <Avatar>
         <AvatarImage src={image} className="object-cover" />
         <AvatarFallback>Product</AvatarFallback>

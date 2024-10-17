@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { queryProducts } from "@/data/queryProduct"; // Assume this queries the products
 import ProductSlider from "@/components/Sliders/Slider1";
+import { HeroCard } from "../Food/Components/HeroCard";
+import { b1,watch } from "@/assets/images";
 
 const useQuery = () => {
   return new URLSearchParams(useLocation().search);
@@ -29,7 +31,7 @@ const SearchResults = () => {
     // Group products by category and isLatest
     const grouped = filteredProducts.reduce((acc, product) => {
       const cat = product.category || "Others"; // Group uncategorized products under 'Others'
-      const latestKey = product.isLatest ? "Latest" : "Old"; // Key for latest and old products
+      const latestKey = product.mainTags.includes("Latest") ? "Latest" : "Old"; // Key for latest and old products
 
       if (!acc[cat]) {
         acc[cat] = { Latest: [], Old: [] }; // Initialize with arrays for Latest and Old
@@ -43,10 +45,18 @@ const SearchResults = () => {
 
   return (
     <div className="container mx-auto p-4">
-      <h2 className="text-lg font-bold mb-4">
-        Search Results for "{searchQuery}"
-        {(category !== "all" && ` in ${category}`) || ""}
-      </h2>
+      {location.pathname === "/search" && (
+        <h2 className="text-lg font-bold mb-4">
+          Search Results for "{searchQuery}"
+          {(category !== "all" && ` in ${category}`) || ""}
+        </h2>
+      )}
+      {location.pathname !== "/search" && (
+        <div className="flex p-6 h-full flex-col md:flex-row justify-between items-center">
+          <HeroCard image={watch} productName="Food Box" price="20 $ / piece" />
+          <HeroCard image={b1} productName="Food glass" price="20 $ / piece" />
+        </div>
+      )}
       {Object.keys(groupedProducts).length > 0 ? (
         Object.keys(groupedProducts).map((cat) => (
           <div key={cat} className="mb-8">
