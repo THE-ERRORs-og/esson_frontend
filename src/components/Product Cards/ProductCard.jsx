@@ -8,7 +8,7 @@ const ProductCard = ({ product, productImg, productDesc, productName, price }) =
     <div className="w-full bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
       <a href="#">
         <img
-          className="p-2 rounded-t-lg"
+          className="p-2 h-52 object-cover rounded-t-lg"
           src={productImg}
           alt="product image"
         />

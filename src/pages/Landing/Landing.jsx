@@ -8,6 +8,7 @@ import Services from "./Services";
 import PromoBanner from "@/components/Promo/PromoBanner";
 import { queryProducts } from "@/data/queryProduct";
 
+
 const Landing = () => {
   const foodProducts = queryProducts({ category: "Food" });
   const clothProducts = queryProducts({ category: "Cloth" });
@@ -27,6 +28,7 @@ const Landing = () => {
         )}
         <PromoBanner />
         <FeaturedCategories />
+       
       </section>
       <Newsletter />
     </main>
