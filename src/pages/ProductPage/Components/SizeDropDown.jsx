@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
-const SizeDropdown = ({ sizeValues = [], selectedSize, setSelectedSize =()=>{} }) => {
-  const [selectedSize, setSelectedSize] = useState("");
+const SizeDropdown = ({ sizeValues = [], selectedSize="", setSelectedSize =()=>{} }) => {
+  // const [selectedSize, setSelectedSize] = useState("");
   const [isDropdownOpen, setIsDropdownOpen] = useState(false); // Track dropdown open state
   const [sizeOptions, setSizeOptions] = useState([]);
   const handleSelect = (value) => {

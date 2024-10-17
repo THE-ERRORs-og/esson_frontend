@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Corousel from "./Components/Corousel";
 import CoroselSideBar from "./Components/CoroselSideBar";
@@ -18,7 +18,13 @@ const ProductPage = () => {
   const [selectedPrintOption, setSelectedPrintOption] = useState('Inside and Outside');
   const [selectedQuantity, setSelectedQuantity] = useState(null);
 
-  // Calculate the total price based on selected quantity and other options
+  useEffect(() => {
+    console.log("selectedSize", selectedSize);
+    console.log("selectedType", selectedType);
+    console.log("selectedPrintOption", selectedPrintOption);
+  }, [selectedSize, selectedType, selectedPrintOption]);
+
+
   const selectedPrice = selectedQuantity !== null ? product?.price[selectedQuantity]?.price : 0;
 
   // If no product is found, show a custom "Product Not Found" div

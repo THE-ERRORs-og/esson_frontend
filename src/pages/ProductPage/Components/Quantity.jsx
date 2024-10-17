@@ -1,8 +1,12 @@
 //Quantity.jsx
 import React, { useState } from "react";
 
-const QuantitySelector = ({options=[]}) => {
-  const [selectedQuantity, setSelectedQuantity] = useState(null);
+const QuantitySelector = ({
+  options = [],
+  selectedQuantity,
+  setSelectedQuantity,
+}) => {
+  // const [selectedQuantity, setSelectedQuantity] = useState(null);
 
   const handleSelection = (index) => {
     setSelectedQuantity(index);
@@ -25,19 +29,21 @@ const QuantitySelector = ({options=[]}) => {
             <span className="text-left">{option.quantity}</span>
             <span className="flex flex-col text-right">
               <span>$ {option.price}</span>
-              <span className="text-sm text-gray-500">$ {option.unit_price} /unit</span>
+              <span className="text-sm text-gray-500">
+                $ {option.unit_price} /unit
+              </span>
             </span>
           </button>
         ))}
       </div>
       <div className="mt-4 text-center">
-        <a
-          href="#"
-          className="text-sm text-indigo-600 hover:underline"
-        >
+        <a href="#" className="text-sm text-indigo-600 hover:underline">
           Need more? Click here
         </a>
-        <p className="text-sm text-gray-500 mt-1">Get extra savings with <span className="font-semibold text-indigo-600">noissue+</span></p>
+        <p className="text-sm text-gray-500 mt-1">
+          Get extra savings with{" "}
+          <span className="font-semibold text-indigo-600">noissue+</span>
+        </p>
       </div>
     </div>
   );
