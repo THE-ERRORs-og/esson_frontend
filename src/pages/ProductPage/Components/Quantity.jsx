@@ -1,17 +1,8 @@
+//Quantity.jsx
 import React, { useState } from "react";
 
-const QuantitySelector = () => {
+const QuantitySelector = ({options=[]}) => {
   const [selectedQuantity, setSelectedQuantity] = useState(null);
-
-  const options = [
-    { quantity: "1 Sample", price: "$45.00", perUnit: "$45.00 / Unit" },
-    { quantity: "25", price: "$100.00", perUnit: "$4.00 / Unit" },
-    { quantity: "50", price: "$105.00", perUnit: "$2.10 / Unit" },
-    { quantity: "100", price: "$140.00", perUnit: "$1.40 / Unit" },
-    { quantity: "250", price: "$280.00", perUnit: "$1.12 / Unit" },
-    { quantity: "500", price: "$490.00", perUnit: "$0.980 / Unit" },
-    { quantity: "1000", price: "$870.00", perUnit: "$0.870 / Unit" },
-  ];
 
   const handleSelection = (index) => {
     setSelectedQuantity(index);
@@ -33,8 +24,8 @@ const QuantitySelector = () => {
           >
             <span className="text-left">{option.quantity}</span>
             <span className="flex flex-col text-right">
-              <span>{option.price}</span>
-              <span className="text-sm text-gray-500">{option.perUnit}</span>
+              <span>$ {option.price}</span>
+              <span className="text-sm text-gray-500">$ {option.unit_price} /unit</span>
             </span>
           </button>
         ))}

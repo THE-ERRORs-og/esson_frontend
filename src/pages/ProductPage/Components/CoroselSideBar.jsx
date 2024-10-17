@@ -12,22 +12,35 @@ import SizeDropdown from "./SizeDropDown";
 import Selector from "./Selectors";
 import QuantitySelector from "./Quantity";
 
-const CoroselSideBar = ({product}) => {
+const CoroselSideBar = ({
+  product,
+  selectedSize,
+  setSelectedSize,
+  selectedType,
+  setSelectedType,
+  selectedPrintOption,
+  setSelectedPrintOption,
+  selectedQuantity,
+  setSelectedQuantity,
+  selectedPrice,
+  handleAddToCart,
+}) => {
   return (
     <div className="m-6">
       <h1 className="font-bold text-3xl">{product.name}</h1>
       <h3 className="font-bold text-xl my-4">from $0.870 / unit</h3>
 
-      <p className="flex flex-wrap my-5">
-        {product.description}
-      </p>
+      <p className="flex flex-wrap my-5">{product.description}</p>
 
       <div className="my-4">
-        {product.tags.map((tag,idx) => (
-          <Button key={idx} className="bg-gray-300 text-black mx-1 my-2 rounded-full ">
-          {" "}
-          {tag}
-        </Button>
+        {product.tags.map((tag, idx) => (
+          <Button
+            key={idx}
+            className="bg-gray-300 text-black mx-1 my-2 rounded-full "
+          >
+            {" "}
+            {tag}
+          </Button>
         ))}
       </div>
 
@@ -47,11 +60,25 @@ const CoroselSideBar = ({product}) => {
             </PopoverContent>
           </Popover>
         </div>
-        <SizeDropdown sizeValues={product.size} />
+        <SizeDropdown
+          sizeValues={product.size}
+          selectedSize={selectedSize}
+          setSelectedSize={setSelectedSize}
+        />
       </div>
 
-      <Selector />
-      <QuantitySelector />
+      <Selector
+        selectedType={selectedType}
+        setSelectedType={setSelectedType}
+        selectedPrintOption={selectedPrintOption}
+        setSelectedPrintOption={setSelectedPrintOption}
+      />
+
+      <QuantitySelector
+        options={product.price}
+        selectedQuantity={selectedQuantity}
+        setSelectedQuantity={setSelectedQuantity}
+      />
     </div>
   );
 };
