@@ -1,3 +1,10 @@
+import {
+  cup_lid_pack,
+  cup_lid,
+  boss_cup_black,
+  boss_esson_cup,
+} from "@/assets/images";
+
 const products = [
   {
     id: "fpcs01",
@@ -16,7 +23,7 @@ const products = [
     ],
     size: ["12oz", "16oz", "24oz", "32oz"],
     isLatest: true,
-    images: [],
+    images: [cup_lid_pack, cup_lid],
   },
   {
     id: "fccs02",
@@ -33,7 +40,7 @@ const products = [
     ],
     size: ["12oz", "16oz", "20", "24oz", "32oz"],
     isLatest: true,
-    images: [],
+    images: [boss_esson_cup],
   },
   {
     id: "fpb03",
@@ -61,7 +68,7 @@ const products = [
       "25 size",
     ],
     isLatest: true,
-    images: [],
+    images: [cup_lid_pack, cup_lid],
   },
   {
     id: "fpb04",
@@ -89,7 +96,7 @@ const products = [
       "25 size",
     ],
     isLatest: true,
-    images: [],
+    images: [cup_lid_pack, cup_lid],
   },
   {
     id: "fpb05",
@@ -117,7 +124,7 @@ const products = [
       "25 size",
     ],
     isLatest: true,
-    images: [],
+    images: [cup_lid_pack, cup_lid],
   },
   {
     id: "fpb06",
@@ -145,7 +152,7 @@ const products = [
       "25 size",
     ],
     isLatest: true,
-    images: [],
+    images: [cup_lid_pack, cup_lid],
   },
   {
     id: "fpzb07",
@@ -163,7 +170,7 @@ const products = [
     ],
     size: ["8 in", "10 in", "12 in", "14 in", "15 in", "16 in", "20 in"],
     isLatest: true,
-    images: [],
+    images: [cup_lid_pack, cup_lid],
   },
 ];
 
