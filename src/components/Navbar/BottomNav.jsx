@@ -23,8 +23,12 @@ const BottomNav = () => {
 
   const menuItems = [
     { name: "Home", path: "/", icon: <AiOutlineHome /> },
-    { name: "Clothes", path: "/clothes", icon: <GiClothes /> },
-    { name: "Food", path: "/food", icon: <MdOutlineFastfood  /> },
+    { name: "Clothes", path: "/product?category=Cloth", icon: <GiClothes /> },
+    {
+      name: "Food",
+      path: "/product?category=Food",
+      icon: <MdOutlineFastfood />,
+    },
     { name: "About Us", path: "/aboutus", icon: <AiOutlineInfoCircle /> },
     { name: "Contact", path: "/contact", icon: <AiOutlinePhone /> },
   ];

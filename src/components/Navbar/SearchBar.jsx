@@ -1,5 +1,5 @@
 import { queryProducts, getUniqueValues } from "@/data/queryProduct";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react"; // Import useRef
 import { Link, useNavigate } from "react-router-dom";
 
 const SearchBar = () => {
@@ -9,6 +9,7 @@ const SearchBar = () => {
   const [categories, setCategories] = useState(["all"]); // Start with "All Categories"
   const [isFocused, setIsFocused] = useState(false); // Track input focus
   const navigate = useNavigate(); // Use navigate to programmatically redirect
+  const searchBarRef = useRef(null); // Create a ref for the search bar container
 
   // Fetch unique categories on component mount
   useEffect(() => {
@@ -30,7 +31,7 @@ const SearchBar = () => {
   const handleSearch = () => {
     if (searchTerm.trim()) {
       setSearchTerm(""); // Clear search input
-      navigate(`/search/${category}/${searchTerm}`);
+      navigate(`/search?category=${category}&query=${searchTerm}`);
     }
   };
 
@@ -47,15 +48,34 @@ const SearchBar = () => {
     navigate(`/product-page/${product.id}`);
   };
 
+  // Close popup when clicking outside the search bar
+  const handleClickOutside = (event) => {
+    if (searchBarRef.current && !searchBarRef.current.contains(event.target)) {
+      setIsFocused(false);
+    }
+  };
+
+  useEffect(() => {
+    // Add event listener for clicks
+    document.addEventListener("mousedown", handleClickOutside);
+
+    // Cleanup the event listener on component unmount
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
   return (
-    <div className="relative flex items-center h-[70%] w-full justify-center max-w-full">
+    <div
+      className="relative flex items-center h-[70%] w-full justify-center max-w-full"
+      ref={searchBarRef}
+    >
       {/* Search input */}
       <input
         type="text"
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
         onFocus={() => setIsFocused(true)} // Show popup when input is focused
-        // onBlur={() => setTimeout(() => setIsFocused(false), 100)} // Delay hiding the popup
         onKeyPress={handleKeyPress} // Trigger search on Enter key press
         placeholder="Search"
         className="border text-sm border-gray-300 h-full px-4 py-2 w-full md:flex-1 min-h-5 rounded-l-md focus:outline-none"

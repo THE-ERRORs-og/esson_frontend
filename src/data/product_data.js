@@ -21,8 +21,8 @@ const products = [
       "Custom Sizing",
       "QR",
     ],
+    mainTags: ["Popular",  ],
     size: ["12oz", "16oz", "24oz", "32oz"],
-    isLatest: true,
     images: [cup_lid_pack, cup_lid],
   },
   {
@@ -38,8 +38,8 @@ const products = [
       "Custom Sizing",
       "QR",
     ],
+    mainTags: ["Popular", ],
     size: ["12oz", "16oz", "20", "24oz", "32oz"],
-    isLatest: true,
     images: [boss_esson_cup],
   },
   {
@@ -56,6 +56,7 @@ const products = [
       "Custom Sizing",
       "QR",
     ],
+    mainTags: ["Popular", ],
     size: [
       "2 size",
       "4 size",
@@ -67,7 +68,6 @@ const products = [
       "20 size",
       "25 size",
     ],
-    isLatest: true,
     images: [cup_lid_pack, cup_lid],
   },
   {
@@ -84,6 +84,7 @@ const products = [
       "Custom Sizing",
       "QR",
     ],
+    mainTags: ["Popular", ],
     size: [
       "2 size",
       "4 size",
@@ -95,7 +96,6 @@ const products = [
       "20 size",
       "25 size",
     ],
-    isLatest: true,
     images: [cup_lid_pack, cup_lid],
   },
   {
@@ -112,6 +112,7 @@ const products = [
       "Custom Sizing",
       "QR",
     ],
+    mainTags: ["Popular", "Latest"],
     size: [
       "2 size",
       "4 size",
@@ -123,7 +124,6 @@ const products = [
       "20 size",
       "25 size",
     ],
-    isLatest: true,
     images: [cup_lid_pack, cup_lid],
   },
   {
@@ -140,6 +140,7 @@ const products = [
       "Custom Sizing",
       "QR",
     ],
+    mainTags: ["Popular",],
     size: [
       "2 size",
       "4 size",
@@ -151,7 +152,6 @@ const products = [
       "20 size",
       "25 size",
     ],
-    isLatest: true,
     images: [cup_lid_pack, cup_lid],
   },
   {
@@ -168,8 +168,42 @@ const products = [
       "Custom Sizing",
       "QR",
     ],
+    mainTags: ["Popular", ],
     size: ["8 in", "10 in", "12 in", "14 in", "15 in", "16 in", "20 in"],
-    isLatest: true,
+    images: [],
+  },
+  {
+    id: "cpzb08",
+    name: "Shirt",
+    category: "Cloth",
+    description: "",
+    tags: [
+      "Recyclable",
+      "Compostable",
+      "FSC-Certified",
+      "Water-based Inks",
+      "Custom Sizing",
+      "QR",
+    ],
+    mainTags: ["Popular", "Latest"],
+    size: ["8 in", "10 in", "12 in", "14 in", "15 in", "16 in", "20 in"],
+    images: [],
+  },
+  {
+    id: "cpzb09",
+    name: "T-Shirt",
+    category: "Cloth",
+    description: "",
+    tags: [
+      "Recyclable",
+      "Compostable",
+      "FSC-Certified",
+      "Water-based Inks",
+      "Custom Sizing",
+      "QR",
+    ],
+    mainTags: ["Popular",],
+    size: ["8 in", "10 in", "12 in", "14 in", "15 in", "16 in", "20 in"],
     images: [cup_lid_pack, cup_lid],
   },
 ];

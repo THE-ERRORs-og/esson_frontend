@@ -14,10 +14,12 @@ import { watch } from "../../assets/images";
 import ProductCard from "@/components/Product Cards/ProductCard";
 import Slider from "@/components/Product Cards/Slider";
 
-const Categories = ({category}) => {
+const Categories = ({category,productData}) => {
   return (
     <div>
-      <h1 className="uppercase font-bold text-2xl text-justify py-4">{category}</h1>
+      <h1 className="uppercase font-bold text-2xl text-justify py-4">
+        {category}
+      </h1>
       <hr />
       <div className="flex justify-center gap-16 p-2">
         {/* <img
@@ -25,8 +27,8 @@ const Categories = ({category}) => {
           alt=""
           className="hidden md:flex md:w-1/3 m-5"
         /> */}
-        <Slider  />
-        <CarouselSize />
+        <Slider productData={productData} />
+        <CarouselSize productData={productData} />
       </div>
     </div>
   );
@@ -34,7 +36,7 @@ const Categories = ({category}) => {
 
 export default Categories;
 
-const CarouselSize = () => {
+const CarouselSize = ({productData}) => {
   return (
     <div className="w-full md:w-[59%] flex items-center pb-6">
       <Carousel
@@ -44,23 +46,17 @@ const CarouselSize = () => {
         className="w-full"
       >
         <CarouselContent>
-          {Array.from({ length: 5 }).map((_, index) => (
+          {productData.map((product, index) => (
             <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
-              {/* <div className="p-1">
-                <Card>
-                  <CardContent className="flex aspect-square items-center justify-center p-6">
-                    <span className="text-3xl font-semibold">{index + 1}</span>
-                  </CardContent>
-                </Card>
-              </div> */}
-
               <ProductCard
-                productImg={watch}
-                productDesc="Series 7 GPS, Aluminium Case, Starlight Sport"
-                productName="Apple Watch"
+                product={product}
+                productImg={
+                  product.images.length > 0 ? product.images[0] : watch
+                }
+                productDesc={truncateDescription(product.description, 60)} // Example: limit to 100 characters
+                productName={product.name}
                 price="$599"
               />
-
             </CarouselItem>
           ))}
         </CarouselContent>
@@ -69,4 +65,13 @@ const CarouselSize = () => {
       </Carousel>
     </div>
   );
+};
+
+
+// Helper function to truncate the description
+const truncateDescription = (desc, maxLength) => {
+  if (desc.length > maxLength) {
+    return desc.substring(0, maxLength) + '...';
+  }
+  return desc;
 };

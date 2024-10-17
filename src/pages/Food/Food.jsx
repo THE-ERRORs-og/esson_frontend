@@ -6,7 +6,9 @@ const Food = () => {
   return (
     <div>
       <FoodSlider />
-   
+      <SlidingCarousel titleText="Trending Now"/>
+      <FoodSlider />
+      <SlidingCarousel titleText="Shop Now"/>
       
     </div>
   );

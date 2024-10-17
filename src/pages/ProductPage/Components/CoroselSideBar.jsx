@@ -69,7 +69,7 @@ const CoroselSideBar = ({product}) => {
             </PopoverContent>
           </Popover>
         </div>
-        <SizeDropdown />
+        <SizeDropdown sizeValues={product.size} />
       </div>
 
       <Selector />
