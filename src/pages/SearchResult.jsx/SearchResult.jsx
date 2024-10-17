@@ -4,6 +4,7 @@ import { queryProducts } from "@/data/queryProduct"; // Assume this queries the 
 import ProductSlider from "@/components/Sliders/Slider1";
 import { HeroCard } from "../Food/Components/HeroCard";
 import { b1,watch } from "@/assets/images";
+import { SlidingCarousel } from "../Food/Components/SlidingCarousel";
 
 const useQuery = () => {
   return new URLSearchParams(useLocation().search);
@@ -69,22 +70,10 @@ const SearchResults = () => {
 
             {/* Render Old Products */}
             {groupedProducts[cat].Old.length > 0 && (
-              <div>
-                <h4 className="font-bold">Old Products</h4>
-                <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                  {groupedProducts[cat].Old.map((product) => (
-                    <li
-                      key={product.id}
-                      className="border p-4 rounded-lg shadow-lg"
-                      onClick={() => navigate(`/product-page/${product.id}`)}
-                    >
-                      <h5 className="font-semibold">{product.name}</h5>
-                      <p className="text-gray-500">{product.category}</p>
-                      {/* You can add more product details here */}
-                    </li>
-                  ))}
-                </ul>
-              </div>
+              <SlidingCarousel
+                titleText={"Products"}
+                products={groupedProducts[cat].Old}
+              />
             )}
           </div>
         ))

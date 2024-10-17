@@ -12,4 +12,6 @@ import f4 from "./services/f4.png";
 
 import aboutusP1 from "./aboutus/peoples.webp";
 
-export {cloth , electronics , headphone , watch ,aboutusP1, logo ,b1 ,f1, f2,f3,f4};
+import noimage from "./noimage.png";
+
+export {cloth , electronics , headphone , watch ,aboutusP1, logo ,b1 ,f1, f2,f3,f4,noimage};

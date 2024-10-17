@@ -15,6 +15,7 @@ import { cn } from "@/lib/utils";
 import { AnimatePresence, motion } from "framer-motion";
 
 import { useOutsideClick } from "../../hooks/use-outside-click";
+import { noimage } from "@/assets/images";
 
 export const CarouselContext = createContext({
   onCardClose: () => {},
@@ -186,7 +187,7 @@ export const Card = ({
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             ref={containerRef}
-            layoutId={layout ? `card-${card.title}` : undefined}
+            layoutId={layout ? `card-${card.name}` : undefined}
             className="max-w-5xl mx-auto bg-white dark:bg-neutral-900 h-fit  z-[60] my-10 p-4 md:p-10 rounded-3xl font-sans relative">
             <button
               className="sticky top-4 h-8 w-8 right-0 ml-auto bg-black dark:bg-white rounded-full flex items-center justify-center"
@@ -194,14 +195,14 @@ export const Card = ({
               <IconX className="h-6 w-6 text-neutral-100 dark:text-neutral-900" />
             </button>
             <motion.p
-              layoutId={layout ? `category-${card.title}` : undefined}
+              layoutId={layout ? `category-${card.name}` : undefined}
               className="text-base font-medium text-black dark:text-white">
               {card.category}
             </motion.p>
             <motion.p
-              layoutId={layout ? `title-${card.title}` : undefined}
+              layoutId={layout ? `name-${card.name}` : undefined}
               className="text-2xl md:text-5xl font-semibold text-neutral-700 mt-4 dark:text-white">
-              {card.title}
+              {card.name}
             </motion.p>
             <div className="py-10">{card.content}</div>
           </motion.div>
@@ -209,7 +210,7 @@ export const Card = ({
       )}
     </AnimatePresence>
     <motion.button
-      layoutId={layout ? `card-${card.title}` : undefined}
+      layoutId={layout ? `card-${card.name}` : undefined}
       onClick={handleOpen}
       className="rounded-3xl bg-gray-100 dark:bg-neutral-900 h-80 w-56 md:h-[30rem] md:w-[22rem] overflow-hidden flex flex-col items-start justify-start relative z-10">
       <div
@@ -221,23 +222,21 @@ export const Card = ({
           {card.category}
         </motion.p>
         <motion.p
-          layoutId={layout ? `title-${card.title}` : undefined}
+          layoutId={layout ? `name-${card.name}` : undefined}
           className="text-white text-xl md:text-3xl font-semibold max-w-xs text-left [text-wrap:balance] font-sans mt-2">
-          {card.title}
+          {card.name}
         </motion.p>
       </div>
       <BlurImage
-        src={card.src}
-        alt={card.title}
-        fill
+        src={card.images.length>0 ? card.images[0]: noimage}
+        alt={card.name}
+        
         className="object-cover h-full absolute z-10 inset-0" />
     </motion.button>
   </>);
 };
 
 export const BlurImage = ({
-  height,
-  width,
   src,
   className,
   alt,
@@ -249,11 +248,9 @@ export const BlurImage = ({
       className={cn("transition duration-300", isLoading ? "blur-sm" : "blur-0", className)}
       onLoad={() => setLoading(false)}
       src={src}
-      width={width}
-      height={height}
       loading="lazy"
       decoding="async"
-      blurDataURL={typeof src === "string" ? src : undefined}
+
       alt={alt ? alt : "Background of a beautiful view"}
       {...rest} />)
   );

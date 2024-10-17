@@ -4,9 +4,10 @@ import React from "react";
 import { Carousel, Card } from "@/components/ui/apple-cards-carousel";
 import { headphone,watch, b1 , cloth, electronics} from "../../../assets/images";
 
-export function SlidingCarousel({titleText}) {
-  const cards = data.map((card, index) => (
-    <Card key={card.src} card={card} index={index} />
+export function SlidingCarousel({titleText,products}) {
+  console.log(products);
+  const cards = products.map((card, index) => (
+    <Card key={card.id} card={card} index={index} />
   ));
 
   return (
