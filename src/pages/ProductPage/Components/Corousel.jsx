@@ -8,7 +8,7 @@ const Corousel = ({ images }) => {
     <Carousel className="w-auto">
       {images.map((image , idx) => (
         <div key={idx}>
-          <img src={image} />
+          <img data-src={image} />
           <p className="legend">Legend 1</p>
         </div>
       ))}
