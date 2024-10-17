@@ -4,7 +4,6 @@ import Corousel from "./Components/Corousel";
 import CoroselSideBar from "./Components/CoroselSideBar";
 import AboutProduct from "./Components/AboutProduct";
 import { queryProducts } from "@/data/queryProduct";
-import { queryProducts } from "@/data/queryProduct";
 
 const ProductPage = () => {
   const { productId } = useParams();
@@ -15,8 +14,9 @@ const ProductPage = () => {
 
   // States for dynamic values
   const [selectedSize, setSelectedSize] = useState(null);
-  const [selectedType, setSelectedType] = useState('Kraft');
-  const [selectedPrintOption, setSelectedPrintOption] = useState('Inside and Outside');
+  const [selectedType, setSelectedType] = useState("Kraft");
+  const [selectedPrintOption, setSelectedPrintOption] =
+    useState("Inside and Outside");
   const [selectedQuantity, setSelectedQuantity] = useState(null);
 
   useEffect(() => {
@@ -25,8 +25,8 @@ const ProductPage = () => {
     console.log("selectedPrintOption", selectedPrintOption);
   }, [selectedSize, selectedType, selectedPrintOption]);
 
-
-  const selectedPrice = selectedQuantity !== null ? product?.price[selectedQuantity]?.price : 0;
+  const selectedPrice =
+    selectedQuantity !== null ? product?.price[selectedQuantity]?.price : 0;
 
   // If no product is found, show a custom "Product Not Found" div
   if (!product) {
@@ -37,7 +37,8 @@ const ProductPage = () => {
             Product Not Found
           </h1>
           <p className="text-gray-600 mb-6">
-            Oops! The product you are looking for does not exist or has been removed.
+            Oops! The product you are looking for does not exist or has been
+            removed.
           </p>
           <a
             href="/"
@@ -69,15 +70,32 @@ const ProductPage = () => {
   return (
     <div>
       <div className="flex flex-col lg:flex-row">
-        <div className="w-[100%] ">
-          <Corousel className="w-full lg:w-[60%] h-auto" images={product.images} />
-
-          {/* On mobile/tablet, move sidebar below carousel */}
+        {/* Carousel and AboutProduct Section */}
+        <div className="w-[100%] lg:w-[60%]">
+          {/* Carousel */}
+          <Corousel
+            className="w-full h-auto"
+            images={product.images}
+          />
+  
+          {/* Sidebar for mobile/tablet below the carousel */}
           <div className="block lg:hidden">
-            <CoroselSideBar className="" product={product} />
+            <CoroselSideBar
+              product={product}
+              selectedSize={selectedSize}
+              setSelectedSize={setSelectedSize}
+              selectedType={selectedType}
+              setSelectedType={setSelectedType}
+              selectedPrintOption={selectedPrintOption}
+              setSelectedPrintOption={setSelectedPrintOption}
+              selectedQuantity={selectedQuantity}
+              setSelectedQuantity={setSelectedQuantity}
+              selectedPrice={selectedPrice}
+              handleAddToCart={handleAddToCart}
+            />
           </div>
-
-          {/* On mobile/tablet, push AboutProduct to the end */}
+  
+          {/* AboutProduct Component */}
           <AboutProduct
             name={product.name}
             description={product.description}
@@ -86,14 +104,27 @@ const ProductPage = () => {
             size={product.size}
           />
         </div>
-
-        {/* Sidebar stays on the right for large screens */}
-        <div className="hidden lg:block">
-          <CoroselSideBar className="" product={product} />
+  
+        {/* Sidebar for larger screens on the right side */}
+        <div className="hidden lg:block lg:w-[40%]">
+          <CoroselSideBar
+            product={product}
+            selectedSize={selectedSize}
+            setSelectedSize={setSelectedSize}
+            selectedType={selectedType}
+            setSelectedType={setSelectedType}
+            selectedPrintOption={selectedPrintOption}
+            setSelectedPrintOption={setSelectedPrintOption}
+            selectedQuantity={selectedQuantity}
+            setSelectedQuantity={setSelectedQuantity}
+            selectedPrice={selectedPrice}
+            handleAddToCart={handleAddToCart}
+          />
         </div>
       </div>
     </div>
   );
+  
 };
 
 export default ProductPage;
