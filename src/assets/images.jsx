@@ -16,4 +16,23 @@ import cup_lid from "./product/cup_lid.png";
 
 import aboutusP1 from "./aboutus/peoples.webp";
 
-export {cloth , electronics , headphone , watch ,aboutusP1, logo ,b1 ,f1, f2,f3,f4,boss_cup_black,boss_esson_cup,cup_lid_pack,cup_lid};
+import noimage from "./noimage.png";
+
+export {
+  cloth,
+  electronics,
+  headphone,
+  watch,
+  aboutusP1,
+  logo,
+  b1,
+  f1,
+  f2,
+  f3,
+  f4,
+  boss_cup_black,
+  boss_esson_cup,
+  cup_lid_pack,
+  cup_lid,
+  noimage
+};

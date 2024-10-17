@@ -9,7 +9,7 @@ import "swiper/css/navigation";
 
 // Import required modules
 import { Pagination, Navigation } from "swiper/modules";
-import { headphone, watch, b1 } from "../../assets/images";
+import { headphone, watch, b1, noimage } from "../../assets/images";
 import { FoodCard } from "@/pages/Food/FoodCard";
 import { useNavigate } from "react-router-dom";
 
@@ -62,7 +62,7 @@ export default function ProductSlider({ products = [] }) {
             navigate(`/product-page/${product.id}`);
           }}>
             <FoodCard
-              image={watch}
+              image={product.images.length > 0 ? product.images[0] : noimage}
               tagName="Popular"
               quantityLimit="Min. 25 units"
               deliveryTime="Delivery: 3 Weeks"
