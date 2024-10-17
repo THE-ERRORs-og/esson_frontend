@@ -3,6 +3,13 @@ import {
   cup_lid,
   boss_cup_black,
   boss_esson_cup,
+  boss_cup_single,
+  boss_cup_white,
+  craft_bag,
+  icecream_cup_upper,
+  icecream_cup,
+  pizza_box_single,
+  pizza_box_multi,
 } from "@/assets/images";
 
 const products = [
@@ -49,7 +56,7 @@ const products = [
     ],
     mainTags: ["Popular"],
     size: ["12oz", "16oz", "20", "24oz", "32oz"],
-    images: [boss_esson_cup],
+    images: [boss_cup_single],
     price: [
       { quantity: "1 Sample", price: 45.0 , unit_price : 45},
       { quantity: "25", price: 100 , unit_price : 4},
@@ -86,7 +93,7 @@ const products = [
       "20 size",
       "25 size",
     ],
-    images: [cup_lid_pack, cup_lid],
+    images: [craft_bag],
     price: [
       { quantity: "1 Sample", price: 45.0 , unit_price : 45},
       { quantity: "25", price: 100 , unit_price : 4},
@@ -123,7 +130,7 @@ const products = [
       "20 size",
       "25 size",
     ],
-    images: [cup_lid_pack, cup_lid],
+    images: [craft_bag],
     price: [
       { quantity: "1 Sample", price: 45.0 , unit_price : 45},
       { quantity: "25", price: 100 , unit_price : 4},
@@ -160,7 +167,7 @@ const products = [
       "20 size",
       "25 size",
     ],
-    images: [cup_lid_pack, cup_lid],
+    images: [craft_bag],
     price: [
       { quantity: "1 Sample", price: 45.0 , unit_price : 45},
       { quantity: "25", price: 100 , unit_price : 4},
@@ -197,7 +204,7 @@ const products = [
       "20 size",
       "25 size",
     ],
-    images: [cup_lid_pack, cup_lid],
+    images: [craft_bag],
     price: [
       { quantity: "1 Sample", price: 45.0 , unit_price : 45},
       { quantity: "25", price: 100 , unit_price : 4},
@@ -224,7 +231,7 @@ const products = [
     ],
     mainTags: ["Popular"],
     size: ["8 in", "10 in", "12 in", "14 in", "15 in", "16 in", "20 in"],
-    images: [],
+    images: [pizza_box_single, pizza_box_multi],
   },
   {
     id: "cpzb08",
