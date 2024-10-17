@@ -41,6 +41,10 @@ const router = createBrowserRouter([
         element: <SearchResults/>,
       },
       {
+        path: "/tempprod",
+        element: <Food/>,
+      },
+      {
         path: "aboutus",
         element: <AboutUs />,
       },
