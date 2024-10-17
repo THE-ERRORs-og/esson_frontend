@@ -12,10 +12,24 @@ import {
 import Filter from "@/components/Filter/Filter";
 import { FiFilter } from "react-icons/fi";
 import { BsFilterSquare } from "react-icons/bs";
+import {
+  headphone,
+  watch,
+  b1,
+  cloth,
+  electronics,
+} from "../../../assets/images";
+import { useNavigate } from "react-router-dom";
 
-export function SlidingCarousel({ titleText }) {
-  const cards = data.map((card, index) => (
-    <Card key={card.src} card={card} index={index} />
+export function SlidingCarousel({  titleText , products }) {
+  const navigate = useNavigate();
+  console.log(products);
+  const cards = products.map((card, index) => (
+    <div onClick={()=>{
+      navigate(`/product-page/${card.id}`);
+    }}>
+      <Card key={card.id} card={card} index={index} />
+    </div>
   ));
 
   const [showFilterDrawer, setShowFilterDrawer] = useState(false);
