@@ -10,48 +10,54 @@ import Food from "./pages/Food/Food";
 import AboutUs from "./pages/AboutUs/AboutUs";
 import ProductPage from "./pages/ProductPage/ProductPage";
 import SearchResults from "./pages/SearchResult/SearchResult";
+import UnderDev from "./pages/under_dev/UnderDev";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
     children: [
+      // {
+      //   path: "",
+      //   element: <Landing />,
+      // },      
       {
         path: "",
-        element: <Landing />,
+        element: <UnderDev />,
       },
-      {
-        path: "contact",
-        element: <ContactComponent />,
-      },
-      {
-        path: "food",
-        element: <Food />,
-      },
-      {
-        path: "product-page/:productId",
-        element: <ProductPage />,
-      },
-      {
-        path: "/product",
-        element: <SearchResults/>,
-      },
-      {
-        path: "/search",
-        element: <SearchResults/>,
-      },
-      {
-        path: "/tempprod",
-        element: <Food/>,
-      },
-      {
-        path: "aboutus",
-        element: <AboutUs />,
-      },
+      // {
+      //   path: "contact",
+      //   element: <ContactComponent />,
+      // },
+      // {
+      //   path: "food",
+      //   element: <Food />,
+      // },
+      // {
+      //   path: "product-page/:productId",
+      //   element: <ProductPage />,
+      // },
+      // {
+      //   path: "/product",
+      //   element: <SearchResults/>,
+      // },
+      // {
+      //   path: "/search",
+      //   element: <SearchResults/>,
+      // },
+      // {
+      //   path: "/tempprod",
+      //   element: <Food/>,
+      // },
+      // {
+      //   path: "aboutus",
+      //   element: <AboutUs />,
+      // },
       {
         path: "*",
         element: <NotFound />,
       },
+
     ],
   },
 ]);
