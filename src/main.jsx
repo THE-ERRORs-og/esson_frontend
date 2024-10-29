@@ -17,42 +17,42 @@ const router = createBrowserRouter([
     path: "/",
     element: <App />,
     children: [
-      {
-        path: "",
-        element: <Landing />,
-      },      
       // {
       //   path: "",
-      //   element: <UnderDev />,
+      //   element: <Landing />,
+      // },      
+      {
+        path: "",
+        element: <UnderDev />,
+      },
+      // {
+      //   path: "contact",
+      //   element: <ContactComponent />,
       // },
-      {
-        path: "contact",
-        element: <ContactComponent />,
-      },
-      {
-        path: "food",
-        element: <Food />,
-      },
-      {
-        path: "product-page/:productId",
-        element: <ProductPage />,
-      },
-      {
-        path: "/product",
-        element: <SearchResults/>,
-      },
-      {
-        path: "/search",
-        element: <SearchResults/>,
-      },
-      {
-        path: "/tempprod",
-        element: <Food/>,
-      },
-      {
-        path: "aboutus",
-        element: <AboutUs />,
-      },
+      // {
+      //   path: "food",
+      //   element: <Food />,
+      // },
+      // {
+      //   path: "product-page/:productId",
+      //   element: <ProductPage />,
+      // },
+      // {
+      //   path: "/product",
+      //   element: <SearchResults/>,
+      // },
+      // {
+      //   path: "/search",
+      //   element: <SearchResults/>,
+      // },
+      // {
+      //   path: "/tempprod",
+      //   element: <Food/>,
+      // },
+      // {
+      //   path: "aboutus",
+      //   element: <AboutUs />,
+      // },
       {
         path: "*",
         element: <NotFound />,
