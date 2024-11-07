@@ -186,8 +186,8 @@ return (
         <div className="space-y-4 hidden md:block">
           <div className="flex items-center gap-4 text-lg">
             <FaPhoneVolume className="text-[#f14d43] text-3xl" />
-            <a href="tel:+91880000000" className="text-dark hover:underline">
-              +91 880000000
+            <a href="tel:+15598359854" className="text-dark hover:underline">
+              (559) 835-9854
             </a>
           </div>
           <div className="flex items-center gap-4 text-lg">
@@ -199,10 +199,10 @@ return (
           <div className="flex items-center gap-4 text-lg">
             <IoLogoWhatsapp className="text-green-600 text-3xl" />
             <a
-              href="https://wa.link/xa00yu"
+              href="https://wa.me/15598359854"
               className="text-dark hover:underline"
             >
-              +91 7410000000
+              (559) 835-9854
             </a>
           </div>
         </div>
