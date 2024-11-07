@@ -23,9 +23,9 @@ const BottomNav = () => {
 
   const menuItems = [
     { name: "Home", path: "/", icon: <AiOutlineHome /> },
-    { name: "Clothes", path: "/product?category=Cloth", icon: <GiClothes /> },
+    { name: "Clothing", path: "/product?category=Cloth", icon: <GiClothes /> },
     {
-      name: "Food",
+      name: "Food Packaging",
       path: "/product?category=Food",
       icon: <MdOutlineFastfood />,
     },
