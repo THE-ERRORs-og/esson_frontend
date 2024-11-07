@@ -83,7 +83,7 @@ const BottomNav = () => {
         </div>
 
         {/* Shop by Categories */}
-        <div className="flex items-center relative" ref={categoriesDropdownRef}>
+        {/* <div className="flex items-center relative" ref={categoriesDropdownRef}>
           <button
             onClick={() => setIsCategoriesOpen(!isCategoriesOpen)}
             className="flex items-center space-x-2 bg-gradient-to-r from-red-500 to-orange-400 text-white py-2 px-4 rounded-lg hover:shadow-md text-nowrap"
@@ -109,7 +109,7 @@ const BottomNav = () => {
               </Link>
             </div>
           )}
-        </div>
+        </div> */}
 
         {/* Middle Section - Desktop Menu */}
         <div className="hidden sm:flex space-x-8 justify-center w-full items-center">
@@ -125,7 +125,7 @@ const BottomNav = () => {
         </div>
 
         {/* Right Section - Cart */}
-        <div className="hidden sm:flex lg:hidden">
+        <div className="flex sm:hidden">
           <CartBox />
         </div>
       </div>
