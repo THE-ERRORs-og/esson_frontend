@@ -67,7 +67,7 @@ const SearchBar = () => {
 
   return (
     <div
-      className="relative flex items-center h-[70%] w-full justify-center max-w-full"
+      className="relative flex items-center h-[70%] justify-center max-w-full"
       ref={searchBarRef}
     >
       {/* Search input */}
@@ -78,31 +78,16 @@ const SearchBar = () => {
         onFocus={() => setIsFocused(true)} // Show popup when input is focused
         onKeyPress={handleKeyPress} // Trigger search on Enter key press
         placeholder="Search"
-        className="border text-sm border-gray-300 h-full px-4 py-2 w-full md:flex-1 min-h-5 rounded-l-md focus:outline-none"
+        className="border text-sm border-gray-300 h-full px-4 py-2 w-full md:flex-1 min-h-5 rounded-md focus:outline-none"
       />
 
-      {/* Category filter */}
-      <select
-        value={category}
-        onChange={(e) => setCategory(e.target.value)}
-        className="hidden md:flex border text-sm border-gray-300 h-full px-4 py-2 bg-white focus:outline-none"
-      >
-        {categories.map((cat) => (
-          <option key={cat} value={cat}>
-            {cat === "all"
-              ? "All Categories"
-              : cat.charAt(0).toUpperCase() + cat.slice(1)}
-          </option>
-        ))}
-      </select>
-
       {/* Search button */}
-      <button
+      <span
         onClick={handleSearch} // Trigger search on button click
-        className="bg-gray-800 text-white h-full px-4 text-center flex items-center justify-center rounded-r-md"
+        className="absolute right-3 top-2 text-gray-400"
       >
         <i className="text-2xl material-icons">search</i>
-      </button>
+      </span>
 
       {/* Filtered products popup */}
       {isFocused && searchTerm && filteredProducts.length > 0 && (
@@ -135,3 +120,5 @@ const SearchBar = () => {
 };
 
 export default SearchBar;
+
+
