@@ -9,7 +9,9 @@ import SearchBar from "./SearchBar";
 const TopNav = () => {
   return (
     <div className="flex items-center justify-center h-40 sm:h-20 py-3 shadow-md">
-      <div className="flex flex-col sm:flex-row justify-between items-center px-5 text-nowrap gap-y-6 gap-x-36 md:gap-x-16  h-full w-full lg:w-[960px] xl:w-[1200px] ">
+      <div className="flex flex-col-reverse sm:flex-row justify-between items-center px-5 text-nowrap gap-y-6 gap-x-36  h-full w-full md:w-[760px] lg:w-[960px] xl:w-[1200px] ">
+        {/* Search Bar */}
+        <SearchBar />
         {/* Logo Section */}
         <div className="flex items-center h-full">
           <img
@@ -20,29 +22,11 @@ const TopNav = () => {
           {/* <span className="text-2xl font-bold text-gray-800">e-mart</span> */}
         </div>
 
-        {/* second part */}
-        <div className="flex items-center h-full w-full lg:w-auto justify-between md:gap-16">
-          {/* Customer Service */}
-          <div className="hidden xl:flex h-full items-center space-x-4 ">
-            {/* <i className="material-icons text-4xl text-gray-800">headset_mic</i> */}
-            <TfiHeadphoneAlt className=" text-3xl text-gray-800" />
-            <div className="flex items-start h-full flex-col text-nowrap justify-center ">
-              <span className="text-gray-600">Call Us Free</span>
-              <a href="tel:+084800456789" className="text-gray-800 text-sm font-bold">
-                (+084) 800 456 789
-              </a>
-            </div>
-          </div>
-
-          {/* Search Bar */}
-          <SearchBar />
-        
-
           {/* Right Section */}
-          <div className="flex sm:hidden lg:flex ">
+          <div className="hidden sm:flex h-full w-auto lg:w-auto">
             <CartBox />
           </div>
-        </div>
+
       </div>
     </div>
   );

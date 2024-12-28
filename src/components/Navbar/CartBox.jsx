@@ -17,7 +17,7 @@ const CartBox = () => {
             0
           </span>
         </div> */}
-        <div className=" sm:flex justify-center items-center space-x-2 hidden">
+        <div className="flex justify-center items-center space-x-2">
           <div className="relative icon w-11">
             <Link to="/cart" className="text-gray-800 w-3">
               {/* <i className="material-icons text-4xl text-gray-600">
