@@ -7,7 +7,10 @@ import Newsletter from "./Newsletter";
 import Services from "./Services";
 import PromoBanner from "@/components/Promo/PromoBanner";
 import { queryProducts } from "@/data/queryProduct";
-
+import ImageSwiper from "@/components/Swiper/ImageSwiper";
+import ProductCard from "@/components/Product Cards/ProductCard";
+import OurProduct from "./OurProduct";
+import HowItsMade from "./HowItsMade";
 
 const Landing = () => {
   const foodProducts = queryProducts({ category: "Food" });
@@ -15,10 +18,17 @@ const Landing = () => {
 
   return (
     <main className="mt-[65px]">
+      <ImageSwiper />
       <section className="container mx-auto px-4 w-[90%]">
         {/* <h1 className="text-4xl font-bold text-center mt-10">Landing Page</h1> */}
+
         <Hero />
-        <Catalouge />
+        
+        {/* <Catalouge /> */}
+
+        <OurProduct productData={foodProducts}/>
+        <HowItsMade/>
+
         <Services />
         {foodProducts.length > 0 && (
           <Categories category="Food" productData={foodProducts} />
@@ -27,8 +37,8 @@ const Landing = () => {
           <Categories category="Clothes" productData={clothProducts} />
         )}
         <PromoBanner />
-        <FeaturedCategories />
-       
+        {/* <FeaturedCategories /> */}
+        <Catalouge />
       </section>
       <Newsletter />
     </main>

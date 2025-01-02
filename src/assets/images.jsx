@@ -22,6 +22,15 @@ import pizza_box_single from "./product/pizza_box_single.png";
 import pizza_box_multi from "./product/pizza_box_multi.png";
 import favicon from "./favicon.png";
 
+import slide1 from './banner/slide1.jpg';
+import slide2 from './banner/slide2.jpg';
+import slide3 from './banner/slide3.jpg';
+import slide4 from './banner/slide4.jpg';
+import slide5 from './banner/slide5.jpg';
+
+import p1 from "./product/p1.jpg";
+import p2 from "./product/p2.jpg";
+import p3 from "./product/p3.jpg";
 
 
 import aboutusP1 from "./aboutus/peoples.webp";
@@ -52,5 +61,13 @@ export {
   icecream_cup,
   pizza_box_single,
   pizza_box_multi,
-  favicon
+  favicon,
+  slide1,
+  slide2,
+  slide3,
+  slide4,
+  slide5,
+  p1,
+  p2,
+  p3
 };
