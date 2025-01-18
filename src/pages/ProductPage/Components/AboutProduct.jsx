@@ -1,4 +1,6 @@
 import React from 'react'
+import MarkdownIt from "markdown-it";
+const md = MarkdownIt();
 
 var data = `<p>
 <img style="float:right; margin: 10px;width:300px; height: 200px;" src="https://xdsoft.net/jodit/finder/files/pexels-kei-scampa-4507967.jpeg" alt="Itaque nostrum est-quod nostrum dico, artis est-ad ea principia, quae accepimus.">
@@ -149,11 +151,12 @@ cena quidem posse videamur?
 </p>
 </dl>`
 
-const AboutProduct = () => {
+const AboutProduct = ({desc = "No details available"}) => {
+    const parsedContent = md.render(desc || "");
   return (
     <div className='m-5'>
       <h1 className='text-3xl font-bold '>Product Detail</h1>
-      <div dangerouslySetInnerHTML={{ __html: data }} />
+      <div dangerouslySetInnerHTML={{ __html: parsedContent }} />
     </div>
   )
 }

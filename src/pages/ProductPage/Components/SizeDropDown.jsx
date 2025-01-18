@@ -20,7 +20,7 @@ const SizeDropdown = ({ sizeValues = [], selectedSize="", setSelectedSize =()=>{
   }, [sizeValues]);
 
   return (
-    <div className="relative w-full max-w-xs mt-4">
+    <div className="relative w-full mt-2">
       {/* Custom Dropdown Trigger */}
       <div
         onClick={() => setIsDropdownOpen(!isDropdownOpen)}
