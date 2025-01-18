@@ -22,8 +22,7 @@ const CoroselSideBar = ({
   setSelectedPrintOption,
   selectedQuantity,
   setSelectedQuantity,
-  selectedPrice,
-  handleAddToCart,
+  handleRequestAQuote,
 }) => {
   return (
     <div className="w-full">
@@ -78,6 +77,18 @@ const CoroselSideBar = ({
         selectedQuantity={selectedQuantity}
         setSelectedQuantity={setSelectedQuantity}
       />
+      <button className="mt-2 w-full flex justify-center items-center gap-2.5 pl-[3.625rem] pr-[3.625rem] p-2 rounded-xl bg-[#002153] text-white  font-medium leading-[normal]" onClick={handleRequestAQuote}>
+        Request a quote
+      </button>
+      <div className="mt-2 text-center">
+        <a href="#" className="text-sm text-indigo-600 hover:underline">
+          Need more? Click here
+        </a>
+        <p className="text-sm text-gray-500 mt-1">
+          Get extra savings with{" "}
+          <span className="font-semibold text-indigo-600">noissue+</span>
+        </p>
+      </div>
     </div>
   );
 };
