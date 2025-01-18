@@ -68,16 +68,13 @@ const ProductPage = () => {
   };
 
   return (
-    <div>
-      <div className="flex flex-col lg:flex-row">
+    <div className="px-12 py-16">
+      <div className="flex flex-col lg:flex-row gap-6 ">
         {/* Carousel and AboutProduct Section */}
-        <div className="w-[100%] lg:w-[60%]">
+        <div className="w-[100%] lg:w-[50%]">
           {/* Carousel */}
-          <Corousel
-            className="w-full h-auto"
-            images={product.images}
-          />
-  
+          <Corousel images={product.images} />
+
           {/* Sidebar for mobile/tablet below the carousel */}
           <div className="block lg:hidden">
             <CoroselSideBar
@@ -94,19 +91,13 @@ const ProductPage = () => {
               handleAddToCart={handleAddToCart}
             />
           </div>
-  
+
           {/* AboutProduct Component */}
-          <AboutProduct
-            name={product.name}
-            description={product.description}
-            category={product.category}
-            tags={product.tags}
-            size={product.size}
-          />
+          <AboutProduct desc={product.detailedDescription} />
         </div>
-  
+
         {/* Sidebar for larger screens on the right side */}
-        <div className="hidden lg:block lg:w-[40%]">
+        <div className="hidden lg:block w-[100%] lg:w-[50%]">
           <CoroselSideBar
             product={product}
             selectedSize={selectedSize}
@@ -122,9 +113,9 @@ const ProductPage = () => {
           />
         </div>
       </div>
+      {/* <ProductPopup/> */}
     </div>
   );
-  
 };
 
 export default ProductPage;

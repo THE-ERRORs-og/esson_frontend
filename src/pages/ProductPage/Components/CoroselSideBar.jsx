@@ -26,28 +26,27 @@ const CoroselSideBar = ({
   handleAddToCart,
 }) => {
   return (
-    <div className="m-6">
-      <h1 className="font-bold text-3xl">{product.name}</h1>
-      <h3 className="font-bold text-xl my-4">from $0.870 / unit</h3>
+    <div className="w-full">
+      <h1 className="font-extrabold text-3xl">{product.name}</h1>
+      <h3 className="font-bold text-xl mt-2">from $0.870 / unit</h3>
 
-      <p className="flex flex-wrap my-5">{product.description}</p>
-
-      <div className="my-4">
+      <div className="mt-2 flex flex-wrap gap-4">
         {product.tags.map((tag, idx) => (
-          <Button
+          <span
             key={idx}
-            className="bg-gray-300 text-black mx-1 my-2 rounded-full "
+            className="flex items-center justify-center bg-gray-300 px-3 pt-2 pb-1 text-center text-black text-sm rounded-full leading-none"
           >
-            {" "}
             {tag}
-          </Button>
+          </span>
         ))}
       </div>
 
-      <hr />
+      <p className="flex flex-wrap mt-2">{product.description}</p>
 
-      <div>
-        <div className="flex ">
+      {/* <hr /> */}
+
+      <div className="w-full mt-2">
+        <div className="flex text-lg font-semibold mb-3 ">
           <h1>Size (LxWxH) </h1>
           <Popover>
             <PopoverTrigger className="mx-3 self-center">

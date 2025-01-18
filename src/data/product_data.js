@@ -43,7 +43,29 @@ const products = [
       { quantity: "500", price: 10, unit_price: 45 },
       { quantity: "1000", price: 10, unit_price: 45 },
     ],
+    detailedDescription: `
+  ### Features
+  - **Recyclable**: Made from eco-friendly materials, ensuring sustainability.
+  - **Compostable**: Home compostable after use.
+  - **FDA-Approved**: Safe for use with food and beverages.
+  - **Water-based Inks**: Printed using non-toxic, eco-friendly inks.
+
+  ### Sizing Information
+  Available in the following sizes:
+  - 12oz
+  - 16oz
+  - 24oz
+  - 32oz
+
+  ### Customization Options
+  - Custom designs available on request.
+  - Can include company logos, branding, and unique artwork.
+
+  ### Additional Details
+  These cups are perfect for hot beverages like coffee and tea. Their single-wall design makes them lightweight yet sturdy. The aqueous lining prevents leaks and adds to the durability while maintaining eco-friendliness.
+  `,
   },
+
   {
     id: "fccs02",
     name: "Clear cup single",

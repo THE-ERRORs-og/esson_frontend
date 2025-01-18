@@ -10,8 +10,7 @@ const Corousel = ({ images }) => {
       {images && images.length > 0 ? (
         images.map((image, idx) => (
           <div key={idx}>
-            <img data-src={image}  />
-            <p className="legend">{image.legend || `Legend ${idx + 1}`}</p>
+            <img data-src={image} className="rounded-lg" />
           </div>
         ))
       ) : (

@@ -13,9 +13,9 @@ const QuantitySelector = ({
   };
 
   return (
-    <div className="w-full max-w-md">
-      <h2 className="text-lg font-semibold mb-4">Quantity</h2>
-      <div className="bg-white shadow rounded-lg overflow-hidden border border-gray-200">
+    <div className="w-full">
+      <h2 className="text-lg font-semibold mt-2">Quantity</h2>
+      <div className="mt-2 w-full bg-white shadow rounded-lg overflow-hidden border border-gray-200">
         {options.map((option, index) => (
           <button
             key={index}
