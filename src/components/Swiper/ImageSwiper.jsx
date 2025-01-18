@@ -4,6 +4,7 @@ import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import { slide1,slide2,slide3,slide4,slide5 } from "@/assets/images";
+import { FaArrowRight } from "react-icons/fa";
 
 export default function ImageSwiper() {
   const [listings, setListings] = useState([]);
@@ -22,7 +23,7 @@ export default function ImageSwiper() {
 
   return (
     listings.length > 0 && (
-      <div className="mb-8 md:h-[600px] h-[400px]">
+      <div className="mb-8  md:h-[400px] h-[300px]">
         <Swiper
         style={{
           "--swiper-pagination-color": "#C62300",
@@ -42,15 +43,19 @@ export default function ImageSwiper() {
         >
           {listings.map(({ id, imgUrl, alt }) => (
             <SwiperSlide key={id}>
-              <div className="w-full relative md:h-[600px] h-[400px]">
+              <div className="w-full rounded-2xl relative md:h-[400px] h-[300px]">
                 <img
                   src={imgUrl}
                   alt={alt}
-                  className="h-full w-full  object-cover overflow-hidden"
+                  className="rounded-2xl h-full w-full  object-cover overflow-hidden"
                 />
-                <p className="text-[#f1faee] absolute left-0 top-0 font-medium max-w-[90%] bg-[#6b8198] shadow-lg opacity-90 p-2 rounded-br-3xl">
-                  Read More!
+                <div className="flex items-center justify-center absolute space-x-2 right-10 bottom-6 max-w-[90%] ">
+                <p className="text-black text-2xl rounded-2xl font-semibold">
+                  See more
                 </p>
+                <FaArrowRight className="text-2xl" />
+                </div>
+                
               </div>
             </SwiperSlide>
           ))}

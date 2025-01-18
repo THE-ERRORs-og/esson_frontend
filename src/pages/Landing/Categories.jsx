@@ -10,24 +10,20 @@ import {
 } from "../../components/ui/carousel";
 
 
-import { noimage} from "../../assets/images";
+import { noimage, p1} from "../../assets/images";
 import ProductCard from "@/components/Product Cards/ProductCard";
 import Slider from "@/components/Product Cards/Slider";
+import ProductBanner from "@/components/Banner/ProductBanner";
 
-const Categories = ({category,productData}) => {
+const Categories = ({imgUrl, category,productData}) => {
   return (
     <div>
-      <h1 className="uppercase font-bold text-2xl text-justify py-4">
-        {category}
-      </h1>
+     
+      <ProductBanner imgUrl={imgUrl} categoryName={category} linkName = {`Shop more ${category}`}/>
       <hr />
       <div className="flex justify-center gap-16 p-2">
-        {/* <img
-          src="/src/assets/electronics.webp"
-          alt=""
-          className="hidden md:flex md:w-1/3 m-5"
-        /> */}
-        <Slider productData={productData} />
+       
+        {/* <Slider productData={productData} /> */}
         <CarouselSize productData={productData} />
       </div>
     </div>
@@ -38,7 +34,7 @@ export default Categories;
 
 const CarouselSize = ({productData}) => {
   return (
-    <div className="w-full md:w-[59%] flex items-center pb-6">
+    <div className="w-full flex items-center pb-6">
       <Carousel
         opts={{
           align: "start",
@@ -47,7 +43,7 @@ const CarouselSize = ({productData}) => {
       >
         <CarouselContent>
           {productData.map((product, index) => (
-            <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
+            <CarouselItem key={index} className="md:basis-1/3 lg:basis-1/4">
               <ProductCard
                 product={product}
                 productImg={

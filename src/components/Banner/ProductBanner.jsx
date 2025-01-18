@@ -1,0 +1,34 @@
+
+
+import { p1 } from '@/assets/images';
+import React from 'react';
+import { FaArrowRight } from 'react-icons/fa';
+
+const ProductBanner = ({imgUrl, categoryName, linkName}) => {
+  return (
+    <div className="mt-8 flex justify-between items-center rounded-lg overflow-hidden relative">
+      {/* Background Image with reduced opacity */}
+      <div
+        className="absolute inset-0 bg-cover bg-right bg-no-repeat"
+        style={{
+          backgroundImage: `url(${imgUrl})`, // Pass the image dynamically
+          opacity: 0.5, // Background opacity
+        }}
+      ></div>
+
+      {/* Content Layer */}
+      <div className="relative z-10 w-full p-4 flex flex-col md:flex-row justify-between items-center">
+        {/* Title */}
+        <div className="text-black font-semibold md:text-4xl text-2xl">
+          {categoryName}
+        </div>
+        {/* Shop More Link */}
+        <a className="text-black text-2xl font-bold underline">
+          {linkName}
+        </a>
+      </div>
+    </div>
+  );
+};
+
+export default ProductBanner;
