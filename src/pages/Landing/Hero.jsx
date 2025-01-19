@@ -22,12 +22,14 @@ const Hero = () => {
         <div className="flex flex-col space-y-12 md:space-y-64">
           <div className="w-3/4 md:w-1/2 flex flex-col space-y-3 p-6 md:absolute top-32 left-9 ">
             <h2 className="text-2xl md:text-3xl font-thin text-black">
-              Are You Ready With <br />{" "}
-              <span className="font-bold text-white">Google VR</span>
+              Get Fries Bags in Bulk!
+              <br />{" "}
+              <span className="font-bold text-white">
+                Shop Smart, Save More!
+              </span>
             </h2>
-           
-              <QuoteButton text="Request a quote"/>
-          
+
+            <QuoteButton text="Request a quote" />
           </div>
 
           {/* Carousel Dots */}
@@ -48,13 +50,11 @@ const Hero = () => {
           <div className="flex flex-col space-y-12 md:space-y-64">
             <div className="w-3/4 md:w-1/2 flex flex-col space-y-3 p-6 top-32 left-9 ">
               <h2 className="text-lg md:text-3xl font-thin text-black">
-                Microsoft Watch <br />{" "}
-                <span className="font-bold text-white">Google VR</span>
+                Paper <br /> <span className="font-bold text-white">Cup</span>
               </h2>
 
-              <QuoteButton text="Request a quote"/>
+              <QuoteButton text="Request a quote" />
             </div>
-
           </div>
         </div>
 
@@ -64,18 +64,15 @@ const Hero = () => {
           style={{ backgroundImage: `url(${p1})` }}
         >
           <div className="flex flex-col h-full justify-center">
-          <div className="flex flex-col space-y-12 md:space-y-64">
-            <div className="w-3/4 md:w-1/2 flex flex-col space-y-3 p-6 top-32 left-9 ">
-              <h2 className="text-lg md:text-3xl font-thin text-black">
-                Apple <br />{" "}
-                <span className="font-bold text-white">VR</span>
-              </h2>
+            <div className="flex flex-col space-y-12 md:space-y-64">
+              <div className="w-3/4 md:w-1/2 flex flex-col space-y-3 p-6 top-32 left-9 ">
+                <h2 className="text-lg md:text-3xl font-thin text-black">
+                  Pizza <br /> <span className="font-bold text-white">Box</span>
+                </h2>
 
-              <QuoteButton text="Request a quote"/>
+                <QuoteButton text="Request a quote" />
+              </div>
             </div>
-
-          </div>
-         
           </div>
         </div>
       </div>
