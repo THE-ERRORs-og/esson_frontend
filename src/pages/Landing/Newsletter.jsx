@@ -28,7 +28,7 @@ const Newsletter = () => {
         {/* <button className="ml-2 font-bold h-12 px-6 bg-[#0b0335] text-white rounded-md hover:bg-gray-800 transition ease-in-out">
           Submit
         </button> */}
-        <QuoteButton text="Submit" />
+        <QuoteButton className="h-full" isfull="h-full" text="Submit" />
       </div>
     </section>
   );

@@ -3,11 +3,11 @@
 import React from "react";
 import { Button } from "../../components/ui/button";
 
-const QuoteButton = ({text, isfull ="",onClick=()=>{}}) => {
+const QuoteButton = ({text, className="", isfull ="",onClick=()=>{}}) => {
   return (
-    <div >
+    <div className={className}>
       <Button
-        className={`bg-[#002153] ${isfull} text-white text-center rounded-xl hover:bg-[#344CB7] px-8`}
+        className={`bg-[#002153] ${isfull} pt-3 text-md font-medium text-white text-center rounded-xl hover:bg-[#344CB7] px-8`}
         onClick={onClick}
       >
         {text}
