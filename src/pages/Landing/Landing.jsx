@@ -11,6 +11,7 @@ import ImageSwiper from "@/components/Swiper/ImageSwiper";
 import ProductCard from "@/components/Product Cards/ProductCard";
 import OurProduct from "./OurProduct";
 import HowItsMade from "./HowItsMade";
+import { p1, p2, p3 } from "@/assets/images";
 
 const Landing = () => {
   const foodProducts = queryProducts({ category: "Food" });
@@ -18,29 +19,30 @@ const Landing = () => {
 
   return (
     <main className="mt-[65px]">
-      <ImageSwiper />
+      
       <section className="container mx-auto px-4 w-[90%]">
         {/* <h1 className="text-4xl font-bold text-center mt-10">Landing Page</h1> */}
-
+        <ImageSwiper />
         <Hero />
         
         {/* <Catalouge /> */}
 
         <OurProduct productData={foodProducts}/>
+        
         <HowItsMade/>
 
         <Services />
         {foodProducts.length > 0 && (
-          <Categories category="Food" productData={foodProducts} />
+          <Categories imgUrl={p1} category="Food" productData={foodProducts} />
         )}
         {clothProducts.length > 0 && (
-          <Categories category="Clothes" productData={clothProducts} />
+          <Categories imgUrl={p3} category="Clothes" productData={clothProducts} />
         )}
-        <PromoBanner />
+        {/* <PromoBanner /> */}
         {/* <FeaturedCategories /> */}
-        <Catalouge />
+        {/* <Catalouge /> */}
       </section>
-      <Newsletter />
+      {/* <Newsletter /> */}
     </main>
   );
 };

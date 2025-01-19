@@ -135,6 +135,8 @@ const ProductPage = () => {
           onClose={() => setShowReviewPopup(false)}
         />
       )}
+
+      
       {showSuccessPopup && <SuccessPopup onClose={handleCloseSuccessPopup} />}
     </div>
   );
