@@ -102,11 +102,17 @@ const SearchResults = () => {
         )}
 
         {category !== "Food" && foodProducts.length > 0 && (
-          <Categories imgUrl={p1} category="Food" productData={foodProducts} />
+          <Categories
+            imgUrl={p1}
+            link="Food"
+            category="Food"
+            productData={foodProducts}
+          />
         )}
         {category !== "Cloth" && clothProducts.length > 0 && (
           <Categories
             imgUrl={p3}
+            link="Cloth"
             category="Clothes"
             productData={clothProducts}
           />

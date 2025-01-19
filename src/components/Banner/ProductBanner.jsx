@@ -4,7 +4,7 @@ import { p1 } from '@/assets/images';
 import React from 'react';
 import { FaArrowRight } from 'react-icons/fa';
 
-const ProductBanner = ({imgUrl, categoryName, linkName}) => {
+const ProductBanner = ({imgUrl,link, categoryName, linkName}) => {
   return (
     <div className="mt-8 flex justify-between items-center rounded-lg overflow-hidden relative">
       {/* Background Image with reduced opacity */}
@@ -23,7 +23,10 @@ const ProductBanner = ({imgUrl, categoryName, linkName}) => {
           {categoryName}
         </div>
         {/* Shop More Link */}
-        <a className="text-black text-2xl font-bold underline">
+        <a
+          href={`product?category=${link}`}
+          className="text-black text-2xl font-bold underline"
+        >
           {linkName}
         </a>
       </div>
