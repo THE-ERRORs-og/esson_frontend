@@ -17,7 +17,7 @@ const ProductBanner = ({imgUrl, categoryName, linkName}) => {
       ></div>
 
       {/* Content Layer */}
-      <div className="relative z-10 w-full p-4 flex flex-col md:flex-row justify-between items-center">
+      <div className="relative z-10 w-full px-4 pt-4 pb-2 flex flex-col md:flex-row justify-between items-center">
         {/* Title */}
         <div className="text-black font-semibold md:text-4xl text-2xl">
           {categoryName}
