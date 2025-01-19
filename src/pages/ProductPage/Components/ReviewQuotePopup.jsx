@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import Swal from "sweetalert2";
+import { RxCross1 } from "react-icons/rx";
+import QuoteButton from "@/components/Button/QuoteButton";
 
 const ReviewQuotePopup = ({
   product,
@@ -100,56 +102,86 @@ const ReviewQuotePopup = ({
     <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
       <div className="bg-white rounded-lg shadow-lg p-6 max-w-3xl w-full relative">
         {/* Header */}
-        <h2 className="text-2xl font-bold text-gray-800 text-center mb-4">
+        <h2 className="text-3xl font-medium text-gray-800 text-center mb-4">
           Review your quote request
         </h2>
-        <button
-          onClick={onClose}
-          className="absolute top-4 right-4 text-gray-600 hover:text-gray-800 focus:outline-none"
-        >
-          &times;
-        </button>
 
-        <div className="flex gap-6">
-          {/* Product Image */}
-          <div className="flex-shrink-0">
+        <RxCross1
+          onClick={onClose}
+          className="absolute top-4 right-4 text-3xl text-gray-600 hover:text-gray-800 focus:outline-none"
+        />
+
+        <div className="">
+          <div className="flex space-x-3">
+            {/* Product Image */}
+
             <img
               src={product.images[0]}
               alt={product.name}
-              className="w-40 h-auto object-contain rounded-lg"
+              className="w-1/2 object-contain rounded-lg"
             />
-          </div>
 
-          {/* Product Details */}
-          <div className="flex-1">
-            <h3 className="text-xl font-bold text-gray-700 mb-2">
-              {product.name}
-            </h3>
-            <p className="text-sm text-gray-600 mb-4">{product.description}</p>
-            <div className="text-gray-700 text-sm mb-4">
-              <div className="flex justify-between">
-                <span className="font-semibold">Unit Price:</span>
-                <span>${unit_price.toFixed(2)}</span>
+            {/* Product Details */}
+            <div className="flex-1">
+              <h3 className="text-xl font-bold text-gray-700 mb-2">
+                {product.name}
+              </h3>
+              <p className="text-sm text-black mb-4">
+                from ${unit_price.toFixed(2)}/unit
+              </p>
+              <p className="text-xs text-gray-600 mb-4">
+                {product.description}
+              </p>
+              <div className="text-gray-700 text-sm mb-4">
+                {/* <div className="flex justify-between">
+                  <span className="font-semibold">Unit Price:</span>
+                  <span>${unit_price.toFixed(2)}</span>
+                </div> */}
+                <div className="flex justify-between">
+                  <span className="font-semibold">Total Price:</span>
+                  <span>${total_price.toFixed(2)}</span>
+                </div>
               </div>
-              <div className="flex justify-between">
-                <span className="font-semibold">Total Price:</span>
-                <span>${total_price.toFixed(2)}</span>
-              </div>
-            </div>
 
-            <div className="grid grid-cols-2 gap-y-2 text-sm text-gray-700">
-              <div className="font-semibold">Size:</div>
-              <div>{selectedSize}</div>
-              <div className="font-semibold">Type:</div>
-              <div>{selectedType}</div>
-              <div className="font-semibold">Print Option:</div>
-              <div>{selectedPrintOption}</div>
-              <div className="font-semibold">Quantity:</div>
-              <div>{quantity}</div>
+              <div className="flex flex-col space-y-3">
+                <div className="flex justify-around space-x-3 items-center ">
+                  <button
+                    className={`pt-2 pb-1 w-full px-6 rounded-lg text-center text-sm font-medium transition duration-300 ${"bg-white border border-gray-300 hover:bg-gray-100"}`}
+                  >
+                    {selectedSize}
+                  </button>
+                  <button
+                    className={`pt-2 pb-1 px-6  w-full  rounded-lg text-center text-sm font-medium transition duration-300 ${"bg-white border border-gray-300 hover:bg-gray-100"}`}
+                  >
+                    {selectedType}
+                  </button>
+                  <button
+                    className={`pt-2 pb-1 px-6  w-full  rounded-lg text-center text-sm font-medium transition duration-300 ${"bg-white border border-gray-300 hover:bg-gray-100"}`}
+                  >
+                    {quantity}
+                  </button>
+                </div>
+                <div className=" flex justify-center items-center">
+                <button
+                  className={`pt-2 pb-1 w-full px-6 rounded-lg text-center text-sm font-medium transition duration-300 ${"bg-white border border-gray-300 hover:bg-gray-100"}`}
+                >
+                  {selectedPrintOption}
+                </button>
+                </div>
+              
+
+                {/* <div className="font-semibold">Size:</div>
+                <div>{selectedSize}</div> */}
+                {/* <div className="font-semibold">Type:</div>
+                <div>{selectedType}</div>
+                <div className="font-semibold">Print Option:</div>
+                <div>{selectedPrintOption}</div>
+                <div className="font-semibold">Quantity:</div>
+                <div>{quantity}</div> */}
+              </div>
             </div>
           </div>
         </div>
-
         {/* Contact Information */}
         <div className="mt-6 grid grid-cols-2 gap-4">
           <div>
@@ -185,7 +217,6 @@ const ReviewQuotePopup = ({
             />
           </div>
         </div>
-
         {/* Product Specification */}
         <div className="mt-6">
           <label
@@ -206,12 +237,13 @@ const ReviewQuotePopup = ({
 
         {/* Confirm Button */}
         <div className="mt-6 flex justify-center">
-          <button
+          <QuoteButton
+          text="Confirm Request"
             onClick={handleSubmit}
             className="px-6 py-2 bg-blue-600 text-white rounded-md text-sm hover:bg-blue-700 transition"
           >
             Confirm Request
-          </button>
+          </QuoteButton>
         </div>
       </div>
     </div>

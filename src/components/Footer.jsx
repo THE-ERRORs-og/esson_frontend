@@ -3,8 +3,8 @@ import { logo } from "../assets/images";
 const Footer = () => {
   return (
     <footer className="  bg-[#f5f5f5] p-8">
-      <div className=" flex justify-center space-x-24">
-        <div className="flex flex-col justify-center p-8">
+      <div className=" flex justify-around space-x-32">
+        <div className="flex flex-col pl-8 pr-8">
           <img src={logo} alt="Logo" className="mb-4 w-48" />
           <div className="flex flex-col w-full sm:w-auto">
             <h4 className="text-lg font-semibold mb-4">Contact</h4>

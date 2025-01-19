@@ -84,10 +84,10 @@ const CoroselSideBar = ({
         <a href="#" className="text-sm text-indigo-600 hover:underline">
           Need more? Click here
         </a>
-        <p className="text-sm text-gray-500 mt-1">
+        {/* <p className="text-sm text-gray-500 mt-1">
           Get extra savings with{" "}
           <span className="font-semibold text-indigo-600">noissue+</span>
-        </p>
+        </p> */}
       </div>
     </div>
   );

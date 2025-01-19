@@ -37,6 +37,15 @@ const AboutUs = () => {
           </p>
         </div>
 
+        <div className="flex items-center justify-between space-x-2 rounded-lg">
+          <div className=" w-1/2">
+            <img src={aboutusP1} alt="about us" className="rounded-lg" />
+          </div>
+          <div className="w-1/2 ">
+          <img src={aboutusP1} alt="about us" className="rounded-lg" />
+          </div>
+        </div>
+
         <div className="mt-10 text-justify">
           <h3 className="text-2xl font-bold text-gray-800 text-center">
             How We Work
@@ -57,20 +66,11 @@ const AboutUs = () => {
             together to bring your brand to life!
           </p>
         </div>
+        
 
         <hr className=" my-8" />
 
-        <div className="flex pt-2 items-start">
-          <div className=" w-3/4 pr-2">
-            <img src={aboutusP1} alt="about us" className="w-full" />
-          </div>
-          <div className="w-1/4 pl-2">
-            <img
-              src="https://cdn.shopify.com/s/files/1/0712/8273/files/New-About-Us-Image.png?1276234868116887889"
-              alt="about us"
-            />
-          </div>
-        </div>
+      
       </div>
     </div>
   );
