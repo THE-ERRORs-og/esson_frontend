@@ -11,7 +11,6 @@ const TopNav = () => {
     <div className="flex items-center justify-center h-40 sm:h-20 py-3 shadow-md">
       <div className="flex flex-col-reverse sm:flex-row justify-between items-center px-5 text-nowrap gap-y-6 gap-x-36  h-full w-full md:w-[760px] lg:w-[960px] xl:w-[1200px] ">
         {/* Search Bar */}
-        <SearchBar />
         {/* Logo Section */}
         <div className="flex items-center h-full">
           <img
@@ -22,10 +21,11 @@ const TopNav = () => {
           {/* <span className="text-2xl font-bold text-gray-800">e-mart</span> */}
         </div>
 
+        <SearchBar />
           {/* Right Section */}
-          <div className="hidden sm:flex h-full w-auto lg:w-auto">
+          {/* <div className="hidden sm:flex h-full w-auto lg:w-auto">
             <CartBox />
-          </div>
+          </div> */}
 
       </div>
     </div>

@@ -33,10 +33,10 @@ const Landing = () => {
 
         <Services />
         {foodProducts.length > 0 && (
-          <Categories imgUrl={p1} category="Food" productData={foodProducts} />
+          <Categories imgUrl={p1} category="Food" link="Food" productData={foodProducts} />
         )}
         {clothProducts.length > 0 && (
-          <Categories imgUrl={p3} category="Clothes" productData={clothProducts} />
+          <Categories imgUrl={p3} category="Clothes" link="Cloth" productData={clothProducts} />
         )}
         {/* <PromoBanner /> */}
         {/* <FeaturedCategories /> */}

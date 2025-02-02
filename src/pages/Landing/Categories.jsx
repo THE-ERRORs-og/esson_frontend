@@ -15,11 +15,11 @@ import ProductCard from "@/components/Product Cards/ProductCard";
 import Slider from "@/components/Product Cards/Slider";
 import ProductBanner from "@/components/Banner/ProductBanner";
 
-const Categories = ({imgUrl, category,productData}) => {
+const Categories = ({imgUrl,link='', category,productData}) => {
   return (
     <div>
      
-      <ProductBanner imgUrl={imgUrl} categoryName={category} linkName = {`Shop more ${category}`}/>
+      <ProductBanner imgUrl={imgUrl} categoryName={category} link={link} linkName = {`Shop more ${category}`}/>
       <hr />
       <div className="flex justify-center gap-16 p-2">
        
