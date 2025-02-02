@@ -6,7 +6,7 @@ import QuoteButton from "../Button/QuoteButton";
 const ProductCard = ({ product, productImg, productDesc, productName, stockText,soldText }) => {
   const navigate = useNavigate();
   return (
-    <div className=" bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+    <div className="p-1 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
       <a href="#">
         <img
           className="p-2 h-[200px] w-full object-cover rounded-2xl"
