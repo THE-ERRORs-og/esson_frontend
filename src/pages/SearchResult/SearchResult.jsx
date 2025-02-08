@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import { queryProducts } from "@/data/queryProduct"; // Assume this queries the products
+import { queryProducts } from "@/data/queryProduct"; 
 import ProductSlider from "@/components/Sliders/Slider1";
 import { HeroCard } from "../Food/Components/HeroCard";
 import { b1, watch } from "@/assets/images";
@@ -51,6 +51,23 @@ const SearchResults = () => {
     setGroupedProducts(grouped);
     console.log(grouped);
   }, [filteredProducts]);
+
+    if (category === "Cloth") {
+      return (
+        <div className="flex flex-col items-center justify-center min-h-[60vh] bg-gray-100 p-6 rounded-2xl shadow-lg">
+          <h2 className="text-4xl font-bold text-gray-800">Clothing Section</h2>
+          <p className="text-lg text-gray-600 mt-3">
+            Our clothing collection is coming soon! Stay tuned for premium
+            apparel with custom branding.
+          </p>
+          <div className="mt-6">
+            <button className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
+              Notify Me
+            </button>
+          </div>
+        </div>
+      );
+    }
 
   return (
     <main className=" mt-[65px]">

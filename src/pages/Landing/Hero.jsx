@@ -10,8 +10,10 @@ import {
   b1,
 } from "../../assets/images";
 import QuoteButton from "@/components/Button/QuoteButton";
+import { useNavigate } from "react-router-dom";
 
 const Hero = () => {
+  const navigate = useNavigate();
   return (
     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
       {/* Main Promotion */}
@@ -29,7 +31,9 @@ const Hero = () => {
               </span>
             </h2>
 
-            <QuoteButton text="Request a quote" />
+            <QuoteButton text="Request a quote" onClick={()=>{
+              navigate("/product-page/pb01");
+            }}/>
           </div>
 
           {/* Carousel Dots */}
@@ -53,7 +57,9 @@ const Hero = () => {
                 Paper <br /> <span className="font-bold text-white">Cup</span>
               </h2>
 
-              <QuoteButton text="Request a quote" />
+              <QuoteButton text="Request a quote" onClick={()=>{
+                navigate("/product-page/pcp01");
+              }}/>
             </div>
           </div>
         </div>
@@ -70,7 +76,9 @@ const Hero = () => {
                   Pizza <br /> <span className="font-bold text-white">Box</span>
                 </h2>
 
-                <QuoteButton text="Request a quote" />
+                <QuoteButton text="Request a quote" onClick={()=>{
+                  navigate("/product-page/pbx01");
+                }} />
               </div>
             </div>
           </div>
