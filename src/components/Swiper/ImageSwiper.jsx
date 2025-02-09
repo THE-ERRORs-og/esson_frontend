@@ -23,7 +23,7 @@ export default function ImageSwiper() {
 
   return (
     listings.length > 0 && (
-      <div className="mb-8  md:h-[400px] h-[300px]">
+      <div className="mb-8  md:h-[400px] h-[300px] rounded-lg">
         <Swiper
         style={{
           "--swiper-pagination-color": "#C62300",
@@ -39,7 +39,7 @@ export default function ImageSwiper() {
           navigation={false}
           pagination={true}
           modules={[Pagination, Autoplay, Navigation]}
-          className="mySwiper"
+          className="mySwiper rounded-lg"
         >
           {listings.map(({ id, imgUrl, alt }) => (
             <SwiperSlide key={id}>
@@ -47,10 +47,10 @@ export default function ImageSwiper() {
                 <img
                   src={imgUrl}
                   alt={alt}
-                  className="rounded-2xl h-full w-full  object-cover overflow-hidden"
+                  className="rounded-lg h-full w-full  object-cover overflow-hidden"
                 />
                 <div className="flex items-center justify-center absolute space-x-2 right-10 bottom-6 max-w-[90%] ">
-                <p className="text-black text-2xl rounded-2xl font-semibold">
+                <p className="text-black text-2xl rounded-lg font-semibold">
                   See more
                 </p>
                 <FaArrowRight className="text-2xl" />

@@ -185,18 +185,18 @@ return (
         </p>
         <div className="space-y-4 hidden md:block">
           <div className="flex items-center gap-4 text-lg">
-            <FaPhoneVolume className="text-[#f14d43] text-3xl" />
+            <FaPhoneVolume className="text-[#002153] text-3xl" />
             <a href="tel:+15598359854" className="text-dark hover:underline">
               (559) 835-9854
             </a>
           </div>
           <div className="flex items-center gap-4 text-lg">
-            <MdEmail className="text-[#f14d43] text-3xl" />
+            <MdEmail className="text-[#002153] text-3xl" />
             <a href="mailto:support@.com" className="text-dark hover:underline">
               support@essongroup.com
             </a>
           </div>
-          <div className="flex items-center gap-4 text-lg">
+          {/* <div className="flex items-center gap-4 text-lg">
             <IoLogoWhatsapp className="text-green-600 text-3xl" />
             <a
               href="https://wa.me/15598359854"
@@ -204,7 +204,7 @@ return (
             >
               (559) 835-9854
             </a>
-          </div>
+          </div> */}
         </div>
       </div>
 
@@ -283,7 +283,7 @@ return (
             </p>
             <select
               className={`w-full border rounded-md p-3 ${
-                errors.itemType ? "border-red-500" : ""
+                errors.itemType ? "bg-[#002153] hover:bg-[#344CB7]" : ""
               }`}
               name="itemType"
               value={formData.itemType}
@@ -316,7 +316,7 @@ return (
             <p className="font-medium">Which category are you shopping in?</p>
             <select
               className={`w-full border rounded-md p-3 ${
-                errors.category ? "border-red-500" : ""
+                errors.category ? "bg-[#002153] hover:bg-[#344CB7]" : ""
               }`}
               name="category"
               value={formData.category}
@@ -365,7 +365,7 @@ return (
           <button
             type="submit"
             disabled={isLoading}
-            className={`w-full bg-[#f14d43] text-white py-3 rounded-md font-medium hover:bg-[#fa8c3c] ${
+            className={`w-full bg-[#002153] hover:bg-[#344CB7] text-white py-3 rounded-md font-medium ${
               isLoading && "opacity-50 cursor-not-allowed"
             }`}
           >

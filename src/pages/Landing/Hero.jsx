@@ -15,7 +15,7 @@ import { useNavigate } from "react-router-dom";
 const Hero = () => {
   const navigate = useNavigate();
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 rounded-lg">
       {/* Main Promotion */}
       <div
         className="col-span-1 md:col-span-2 rounded-lg shadow-lg relative  bg-cover bg-center"
@@ -45,10 +45,10 @@ const Hero = () => {
       </div>
 
       {/* Side Promotions */}
-      <div className="flex justify-between space-x-2 md:flex-col md:space-x-0 md:space-y-6 relative ">
+      <div className="flex justify-between space-x-0 sm:space-x-2 flex-col md:flex-col md:space-x-0 md:space-y-6 relative">
         {/* Microsoft Headphone */}
         <div
-          className="rounded-lg w-full shadow-lg relative bg-cover bg-center h-52 md:h-full"
+          className="rounded-lg w-full shadow-lg relative bg-cover bg-center h-52 md:h-full mb-5 sm:mb-0"
           style={{ backgroundImage: `url(${p2})` }}
         >
           <div className="flex flex-col space-y-12 md:space-y-64">

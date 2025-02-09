@@ -125,9 +125,9 @@ const BottomNav = () => {
         </div>
 
         {/* Right Section - Cart */}
-        <div className="flex sm:hidden">
+        {/* <div className="flex sm:hidden">
           <CartBox />
-        </div>
+        </div> */}
       </div>
 
       {/* Mobile Menu Drawer */}
